@@ -13,7 +13,7 @@ SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
 # Allow all host headers
 ALLOWED_HOSTS = ['*']
 
-SHARE_URL = 'http://tranquil-forest-1298.herokuapp.com/?ref='
+SHARE_URL = 'http://http://multimarta.herokuapp.com/?ref='
 # Static asset configuration
 # import os
 # BASE_DIR = os.path.dirname(os.path.abspath(__file__))
