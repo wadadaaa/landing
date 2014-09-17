@@ -1,0 +1,104 @@
+{% extends "base.html" %}
+{% load staticfiles %}
+
+{% block styles %}
+<style>
+    body{
+    	border-top: 4px solid #999;
+        background: url('{% static "img/kitchen_bg.jpg" %}') no-repeat
+        center center fixed;
+        -webkit-background-size: cover;
+        -moz-background-size: cover;
+        -o-background-size: cover;
+        background-size: cover;
+    }
+</style>
+{% endblock %}
+
+{% block content %}
+    <!-- Main jumbotron for a primary marketing message or call to action -->
+    <div class="jumbotron" style="background-color: white;" >
+      <div class="container">
+      <div class="col-sm-6">
+        <h1>Multicookers MARTA</h1>
+        <p>Now Multicooker will cook
+										instead of you.</br>
+										And now you need to think 
+										how to fill the free time</p>
+        <p><a class="btn btn-default btn-lg btn-block" href="#signup"role="button">Be First &raquo;</a></p>
+        </div> 
+        <div class="col-sm-6">
+
+          <img src="{% static 'img/mv.png' %}" class ="img-responsive"/>
+
+        </div>
+      </div>
+    </div> 
+
+	<div class='container' style='text-align:center;color:black; ' id="signup" >
+	<div class='col-sm-6 col-sm-offset-3'>
+	<i class="fa fa-unlock fa-5x"></i>
+	  <h1>More details!</h1>
+
+	  <form class='form-horizontal' method="POST" action=""> {% csrf_token %}
+	    <div class='form-group form-group-lg'>
+	        {% if form.email.errors %}
+	     	{% for err in form.email.errors %}
+	    	<div class="alert alert-danger" role="alert">{{ err }}</div>
+	    	<div class="alert alert-danger" role="alert">Your Email is required</div>
+	    {% endfor %}
+	    {% endif %}
+	     
+	          <div class="input-group">
+	        <input class='form-control' type="email" name="email" placeholder="Your email..." />
+	            <span class='input-group-btn'>
+	          <input type='submit' value='Join' class='btn btn-primary btn-lg' />
+	          </span>
+	        </div>
+	    </div>
+	  </form>
+	  <p class='lead'>Sign up here. <br/> Get First News!</p>
+	</div>
+</div>
+
+
+
+
+	    <div class="row featured-row">
+	    	<div class="col-sm-12">
+
+	    		<div class="col-sm-3">
+		    		<i class="fa fa-check-square-o fa-3x"></i>
+		    		<h2>What is?</h2>
+		    		<p class="lead">
+		    		Multicooker MARTA is a modern miracle of technology. 
+		    		</p>
+	    	    </div>
+	    	    <div class="col-sm-3">
+		    		<i class="fa fa-check-square-o fa-3x"></i>
+		    		<h2>Multicook</h2>
+		    		<p class="lead">
+		    		Any dish can be cooked by a manually-specified temperature and time settings with Multicook. 
+		    		</p>
+	    	    </div>
+	    	    <div class="col-sm-3">
+		    		<i class="fa fa-check-square-o fa-3x"></i>
+		    		<h2>3D Keep warm</h2>
+		    		<p class="lead">
+		    		Thanks to 3D-Keep warm technology, meals are cooked by all sides that will provide the best taste and faster cooking.
+
+		    		</p>
+	    	    </div>
+	    	    <div class="col-sm-3">
+		    		<i class="fa fa-check-square-o fa-3x"></i>
+		    		<h2>CHIEF-cooker</h2>
+		    		<p class="lead">
+		    		The unique function allows you to change the temperature setting and time right at the time of cooking.
+		    		</p>
+	    	    </div>
+		</div></div>
+
+
+
+ 
+{% endblock %}	
