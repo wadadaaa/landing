@@ -12,12 +12,13 @@
         -o-background-size: cover;
         background-size: cover;
     }
+
 </style>
 {% endblock %}
 
 {% block content %}
     <!-- Main jumbotron for a primary marketing message or call to action -->
-    <div class="jumbotron" style="background-color: white; -webkit-text-fill-color: black;" >
+    <div class="jumbotron" style="background-color: white; -webkit-text-fill-color: black; padding: 0;" >
 
       <div id="myCarousel" class="carousel slide" data-ride="carousel">
       <!-- Indicators -->
@@ -95,21 +96,21 @@
 	<div class='container' style='text-align:center;color:black; ' id="signup" >
 	<div class='col-sm-6 col-sm-offset-3'>
 	<i class="fa fa-unlock fa-5x"></i>
-	  <h1>Получить книгу рецептов!</h1>
+	  <h1>Узнать подробности и получить книгу рецептов!</h1>
 
 	  <form class='form-horizontal' method="POST" action=""> {% csrf_token %}
 	    <div class='form-group form-group-lg'>
 	        {% if form.email.errors %}
 	     	{% for err in form.email.errors %}
 	    	<div class="alert alert-danger" role="alert">{{ err }}</div>
-	    	<div class="alert alert-danger" role="alert">Your Email is required</div>
+	    	<div class="alert alert-danger" role="alert">введите Email</div>
 	    {% endfor %}
 	    {% endif %}
 	     
 	          <div class="input-group">
-	        <input class='form-control' type="email" name="email" placeholder="Your email..." />
+	        <input class='form-control' type="email" name="email" placeholder="Ваш email..." />
 	            <span class='input-group-btn'>
-	          <input type='submit' value='Join' class='btn btn-primary btn-lg' />
+	          <input type='submit' value='Узнать' class='btn btn-primary btn-lg' />
 	          </span>
 	        </div>
 	    </div>
@@ -117,44 +118,47 @@
 	  <p class='lead'>Оставь email. <br/> Будь в курсе!</p>
 	</div>
 </div>
-
-
-
-
 	    <div class="row featured-row">
 	    	<div class="col-sm-12">
 
 	    		<div class="col-sm-3">
 		    		<i class="fa fa-check-square-o fa-3x"></i>
-		    		<h2>What is?</h2>
+		    		<h2>Мультиварка - это?</h2>
 		    		<p class="lead">
-		    		Multicooker MARTA is a modern miracle of technology. 
+		    		Новейшая разработка для экономии времени. 
 		    		</p>
 	    	    </div>
 	    	    <div class="col-sm-3">
 		    		<i class="fa fa-check-square-o fa-3x"></i>
-		    		<h2>Multicook</h2>
+		    		<h2>Программы</h2>
 		    		<p class="lead">
-		    		Any dish can be cooked by a manually-specified temperature and time settings with Multicook. 
+		    		Для каждого блюда уникальная автоматическая программа. 
 		    		</p>
 	    	    </div>
 	    	    <div class="col-sm-3">
 		    		<i class="fa fa-check-square-o fa-3x"></i>
-		    		<h2>3D Keep warm</h2>
+		    		<h2>3D нагрев</h2>
 		    		<p class="lead">
-		    		Thanks to 3D-Keep warm technology, meals are cooked by all sides that will provide the best taste and faster cooking.
-
+		    		Благодря 3D нагреву, пища готовится со всех сторон.
 		    		</p>
 	    	    </div>
 	    	    <div class="col-sm-3">
 		    		<i class="fa fa-check-square-o fa-3x"></i>
-		    		<h2>CHIEF-cooker</h2>
+		    		<h2>Шеф-про</h2>
 		    		<p class="lead">
-		    		The unique function allows you to change the temperature setting and time right at the time of cooking.
+		    		Технология ручного создания программ.
 		    		</p>
 	    	    </div>
 		    </div>
 		</div>
+		</br>
+	    <aside class="bg-dark" style="max-height: 420px;">
+        <div class="container">  
+            <iframe width="854" height="410" style="padding-left: 280px;" src="http://www.youtube.com/embed/rP2VfF9hkkE" frameborder="0"></iframe>
+        </div>    
+    </aside>
+
+
 
 
 
