@@ -1,0 +1,269 @@
+{% extends "new_base.html" %}
+{% load staticfiles %}
+
+<style type="text/css">
+    body{
+        background: url('{% static "img/food-2.jpg" %}') no-repeat
+
+    }
+</style>
+
+{% block content %}
+<nav id="mainNav" class="navbar navbar-default navbar-fixed-top">
+        <div class="container-fluid">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand page-scroll" href="#page-top">MARTA</a>
+            </div>
+
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav navbar-right">
+                    <li>
+                        <a class="page-scroll" href="#about">About</a>
+                    </li>
+                    <li>
+                        <a class="page-scroll" href="#services">How to get</a>
+                    </li>
+                    <li>
+                        <a class="page-scroll" href="#portfolio">Products</a>
+                    </li>
+                    <li>
+                        <a class="page-scroll" href="#contact">0549438101</a>
+                    </li>
+                </ul>
+            </div>
+            <!-- /.navbar-collapse -->
+        </div>
+        <!-- /.container-fluid -->
+    </nav>
+
+    <header>
+        <div class="header-content">
+            <div class="header-content-inner">
+                <h1>Официальный диллер мультиварок Marta</h1>
+                <hr>
+                <p>Бесплатная доставка по&nbsp;Израилю за&nbsp;24 часа.</p>
+        <!--         <div class="subtitle">Бесплатная доставка по&nbsp;Москве и&nbsp;Московской области</div> -->
+                <a href="#about" class="btn btn-primary btn-xl page-scroll">Узнать больше</a>
+            </div>
+        </div>
+    </header>
+<div class="jumbotron" style="background-color: white;" >
+      <div class="container">
+      <div class="col-sm-6">
+        <h3>Multicookers MARTA</h3>
+        <p>Now Multicooker will cook
+                                        instead of you.</br>
+                                        And now you need to think 
+                                        how to fill the free time.</p>
+   <!--      <p><a class="btn btn-default btn-lg btn-block" href="#signup"role="button">Be First &raquo;</a></p> -->
+        </div> 
+        <div class="col-sm-6">
+
+          <img src="{% static 'img/mv.png' %}" class ="img-responsive"/>
+
+        </div>
+      </div>
+    </div> 
+
+    <section class="bg-primary" id="about">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 col-lg-offset-2 text-center">
+                    <h2 class="section-heading">More details!</h2>
+                    <hr class="light">
+                <form class='form-horizontal' method="POST" action=""> {% csrf_token %}
+                    <div class='form-group form-group-lg'>
+                        {% if form.email.errors %}
+                            {% for err in form.email.errors %}
+                <div class="alert alert-danger" role="alert">{{ err }}</div>
+                <div class="alert alert-danger" role="alert">Your Email is required</div>
+                            {% endfor %}
+                        {% endif %}     
+        <div class="input-group">
+            <input class='form-control' type="email" name="email" placeholder="Your email..." />
+            <span class='input-group-btn'>
+              <input type='submit' value='Join' class='btn btn-primary btn-lg' />
+            </span>
+        </div>
+            </div>
+                </form>
+
+        </div></div></div></section>
+
+    <aside class="bg-dark">
+        <div class="container">  
+            <iframe width="854" height="410" style="padding-left: 280px;" src="http://www.youtube.com/embed/rP2VfF9hkkE" frameborder="0"></iframe>
+        </div>    
+    </aside>
+
+    <section id="services">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 text-center">
+                    <h2 class="section-heading">At Your Service</h2>
+                    <hr class="primary">
+                </div>
+            </div>
+        </div>
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-3 col-md-6 text-center">
+                    <div class="service-box">
+                        <i class="fa fa-4x fa-money wow bounceIn text-primary"></i>
+                        <h3>Sturdy Templates</h3>
+                        <p class="text-muted">Our templates are updated regularly so they don't break.</p>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6 text-center">
+                    <div class="service-box">
+                        <i class="fa fa-4x fa-paper-plane wow bounceIn text-primary" data-wow-delay=".1s"></i>
+                        <h3>Ready to Ship</h3>
+                        <p class="text-muted">You can use this theme as is, or you can make changes!</p>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6 text-center">
+                    <div class="service-box">
+                        <i class="fa fa-4x fa-newspaper-o wow bounceIn text-primary" data-wow-delay=".2s"></i>
+                        <h3>Up to Date</h3>
+                        <p class="text-muted">We update dependencies to keep things fresh.</p>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6 text-center">
+                    <div class="service-box">
+                        <i class="fa fa-4x fa-heart wow bounceIn text-primary" data-wow-delay=".3s"></i>
+                        <h3>Made with Love</h3>
+                        <p class="text-muted">You have to make your websites with love these days!</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="no-padding" id="portfolio">
+        <div class="container-fluid">
+            <div class="row no-gutter">
+                <div class="col-lg-4 col-sm-6">
+                    <a href="#" class="portfolio-box">
+                       <img src="{% static 'img/MT-4301_black-ss.jpg' %}" class ="img-responsive"/>
+
+                        <div class="portfolio-box-caption">
+                            <div class="portfolio-box-caption-content">
+                                <div class="project-category text-faded">
+                                   Marta 4301
+                                </div>
+                                <div class="project-name">
+                                <p>45 programms</p>
+                                <p>45 programms</p>
+                                <p>45 programms</p>
+
+
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <div class="col-lg-4 col-sm-6">
+                    <a href="#" class="portfolio-box">
+                        <img src="https://unsplash.it/650/350?image=534" class="img-responsive" alt="">
+                        <div class="portfolio-box-caption">
+                            <div class="portfolio-box-caption-content">
+                                <div class="project-category text-faded">
+                                    Category
+                                </div>
+                                <div class="project-name">
+                                    Project Name
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <div class="col-lg-4 col-sm-6">
+                    <a href="#" class="portfolio-box">
+                        <img src="https://unsplash.it/650/350?image=532" class="img-responsive" alt="">
+                        <div class="portfolio-box-caption">
+                            <div class="portfolio-box-caption-content">
+                                <div class="project-category text-faded">
+                                    Category
+                                </div>
+                                <div class="project-name">
+                                    Project Name
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <div class="col-lg-4 col-sm-6">
+                    <a href="#" class="portfolio-box">
+                        <img src="https://unsplash.it/650/350?image=533" class="img-responsive" alt="">
+                        <div class="portfolio-box-caption">
+                            <div class="portfolio-box-caption-content">
+                                <div class="project-category text-faded">
+                                    Category
+                                </div>
+                                <div class="project-name">
+                                    Project Name
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <div class="col-lg-4 col-sm-6">
+                    <a href="#" class="portfolio-box">
+                        <img src="https://unsplash.it/650/350?image=531" class="img-responsive" alt="">
+                        <div class="portfolio-box-caption">
+                            <div class="portfolio-box-caption-content">
+                                <div class="project-category text-faded">
+                                    Category
+                                </div>
+                                <div class="project-name">
+                                    Project Name
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <div class="col-lg-4 col-sm-6">
+                    <a href="#" class="portfolio-box">
+                        <img src="https://unsplash.it/650/350?image=625" class="img-responsive" alt="">
+                        <div class="portfolio-box-caption">
+                            <div class="portfolio-box-caption-content">
+                                <div class="project-category text-faded">
+                                    Category
+                                </div>
+                                <div class="project-name">
+                                    Project Name
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section id="contact">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 col-lg-offset-2 text-center">
+                    <h2 class="section-heading">Let's Get In Touch!</h2>
+                    <hr class="primary">
+                    <p>Ready to start your next project with us? That's great! Give us a call or send us an email and we will get back to you as soon as possible!</p>
+                </div>
+                <div class="col-lg-4 col-lg-offset-2 text-center">
+                    <i class="fa fa-phone fa-3x wow bounceIn"></i>
+                    <p>123-456-6789</p>
+                </div>
+                <div class="col-lg-4 text-center">
+                    <i class="fa fa-envelope-o fa-3x wow bounceIn" data-wow-delay=".1s"></i>
+                    <p><a href="mailto:your-email@your-domain.com">feedback@startbootstrap.com</a></p>
+                </div>
+            </div>
+        </div>
+    </section>
+    {% endblock %}  
