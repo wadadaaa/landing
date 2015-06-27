@@ -1,0 +1,36 @@
+.quotes{
+	border: 1px solid @mainColor;
+
+	&:after{
+		content: '“';
+		display: block;
+		position: absolute;
+		font-family: @ff1;
+		color: @mainColor;
+		font-size: 70px;
+		font-weight: 300;
+		top: 0;
+		left: 50%;
+		margin-left: -35px;
+		margin-top: -16px;
+		background-color: @color1;
+		width: 70px;
+		text-align: center;
+		overflow: hidden;
+		height: 30px;
+	}
+}
+
+body[data-colorTheme="dark"] {
+
+	.quotes {
+
+		&:after {
+			background-color: #1b1b1b;
+		}
+
+		.quote .text {
+			color: #a1a1a1;
+		}
+	}
+}

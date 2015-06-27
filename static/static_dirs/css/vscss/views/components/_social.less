@@ -1,0 +1,35 @@
+.social {
+	a {
+		width: 30px;
+		height: 30px;
+		line-height: 31px;
+		display: block;
+		background-color: @color1;
+		text-align: center;
+		-webkit-transition: color .25s ease;
+		-moz-transition: color .25s ease;
+		-ms-transition: color .25s ease;
+		-o-transition: color .25s ease;
+		transition: color .25s ease;
+	}
+	&.dark {
+		a {
+			background-color: #282828;
+			color: #414141;
+
+			&:hover {
+				color: @mainColor;
+			}
+		}
+	}
+}
+body[data-colorTheme="dark"] .social {
+	a {
+		color: #414141;
+		background-color: #282828;
+
+		&:hover {
+			color: @mainColor;
+		}
+	}
+}

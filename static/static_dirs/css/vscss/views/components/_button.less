@@ -1,0 +1,43 @@
+.button{
+
+	display: inline-block;
+	vertical-align: middle;
+	zoom: 1; /* Fix for IE7 */
+	*display: inline; /* Fix for IE7 */
+
+	padding: 0 30px;
+	border: 1px solid @color3;
+	cursor: pointer;
+	color: @color3;
+
+	-webkit-transition: border-color .25s ease;
+	   -moz-transition: border-color .25s ease;
+	    -ms-transition: border-color .25s ease;
+	     -o-transition: border-color .25s ease;
+	        transition: border-color .25s ease;
+
+
+	&:hover{
+		border-color: @mainColor;
+		
+		.text {
+			color: @mainColor;
+		}
+	}
+
+	&.fullwidth{
+		display: block;
+		width: 100%;
+	}
+
+	&.dark{
+		border-color: #6f6f6f;	
+	}
+
+	.text {
+		vertical-align: middle;
+		vertical-align: -webkit-baseline-middle;
+		position: relative;
+		top: 1px;
+	}
+}

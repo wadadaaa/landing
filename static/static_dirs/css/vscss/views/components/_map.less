@@ -1,0 +1,68 @@
+.map-pin {
+	background-color: #e1e1e1;
+	color: @mainColor;
+	font-size: 22px;
+	width: 50px;
+	height: 48px;
+	cursor: pointer;
+	top: -1px !important;
+
+	[class*="pe-7s"] {
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		-webkit-transform: translateY(-50%) translateX(-50%);
+		   -moz-transform: translateY(-50%) translateX(-50%);
+		    -ms-transform: translateY(-50%) translateX(-50%);
+		     -o-transform: translateY(-50%) translateX(-50%);
+		        transform: translateY(-50%) translateX(-50%);
+	}
+
+	.pe-7s-close {
+		font-size: 40px;
+	}
+}
+
+body[data-colorTheme="dark"] {
+	.map-pin {
+		background-color: #2a2a2a;
+	}
+}
+
+#contacts {
+	z-index: 3;
+}
+
+.map-wrapper {
+	z-index: 2;
+
+	&.active {
+		display: block !important;
+	}
+
+	.map-pin {
+		display: none;
+	}
+
+	@media screen and (max-width: 1024px) {
+		position: fixed !important;
+		z-index: 10;
+
+		.map-pin {
+			display: block;
+		}
+	}
+}
+
+@media screen and (max-width: 640px) {
+	#contacts {
+
+		.logo-container {
+			text-align: center;
+		}
+
+		.wrapper.contacts {
+			padding-top: 80px !important;
+		}
+	}
+}

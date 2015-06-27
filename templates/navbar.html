@@ -1,7 +1,32 @@
-<div class="navbar navbar-inverse" role="navigation">
-      <div class="container">
-        <div class="navbar-header">
-          <a class="navbar-brand">MARTA multicookers</a>
-        </div>
-      </div>
-</div>
+{% load staticfiles %}
+
+<header class="wrapper pt20 pb20 tbgc1 section-fix header-wrapper">
+		<div class="row">
+	 		<div class="column large-3 medium-6">
+				<div class="logo component">
+					<a href="#" class="link">
+					    <img src="{% static 'img/theme/logo.png' %}" class ="image darklogo" alt="logo"/>
+						<img src="{% static 'img/theme/logo.png' %}" class ="image lightlogo" alt="logo"/>
+					</a>
+				</div>
+			</div>
+            			<div class="column large-9 medium-6">
+				<div class="wrapper pt20 pb20 js-menu-container">
+					<nav class="menu component">
+						<ul class="list inline ar xsgutter">
+{#							<li><a class="link fz2 fw3 ttu ctm" href="#bestOffers">best offers</a></li>#}
+							<li><a class="link fz2 fw3 ttu ctm" href="#aboutus">О нас</a></li>
+							<li><a class="link fz2 fw3 ttu ctm" href="#team">Команда</a></li>
+							<li><a class="link fz2 fw3 ttu ctm" href="#tours">Мультиварки</a></li>
+{#							<li><a class="link fz2 fw3 ttu ctm" href="#blog">blog</a></li>#}
+							<li><a class="link fz2 fw3 ttu ctm" href="#testimonials">Отзывы</a></li>
+							<li><a class="link fz2 fw3 ttu ctm" href="#contacts">Контакты</a></li>
+						</ul>
+						<div class="component menutoggle js-menu-toggle">
+							<span class="line"></span>
+						</div>
+					</nav>
+				</div>
+			</div>
+		</div>
+</header>

@@ -1,166 +1,1180 @@
 {% extends "base.html" %}
 {% load staticfiles %}
 
-{% block styles %}
-<style>
-    body{
-    	border-top: 4px solid #999;
-        background: url('{% static "img/bg-food-4.jpg" %}') no-repeat
-        center center fixed;
-        -webkit-background-size: cover;
-        -moz-background-size: cover;
-        -o-background-size: cover;
-        background-size: cover;
-    }
-
-</style>
-{% endblock %}
-
 {% block content %}
-    <!-- Main jumbotron for a primary marketing message or call to action -->
-    <div class="jumbotron" style="background-color: white; -webkit-text-fill-color: black; padding: 0;" >
+	<div class="preloader-block">
+		<div class="first-level wrapper pa acc ovh">
+			<div class="top-part preloader-part"></div>
+			<div class="bottom-part preloader-part"></div>
 
-      <div id="myCarousel" class="carousel slide" data-ride="carousel">
-      <!-- Indicators -->
-      <ol class="carousel-indicators">
-        <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
-        <li data-target="#myCarousel" data-slide-to="1"></li>
-        <li data-target="#myCarousel" data-slide-to="2"></li>
-      </ol>
-      <div class="carousel-inner" role="listbox">
-        <div class="item active">
-		<img src="{% static 'img/banner_4309_white.jpg' %}" class ="first-slide" alt="First slide"/>
-          <div class="container">
-            <div class="carousel-caption">
-              <div class="col-sm-6">
-        <h1>Мультиварки MARTA</h1>
-        <p>Скороварка MARTA 4309
-										скоро в Израиле.</br>
-										Теперь она готовит, 
-										а вы отдыхаете!
-										45 автоматических прорамм,
-										функция шеф-про и готовка под давлением.</p>
-        <p><a class="btn btn-default btn-lg btn-block" href="#signup"role="button">Узнать первым. &raquo;</a></p>
-        </div> 
-
-            </div>
-          </div>
-        </div>
-        <div class="item">
-        <img src="{% static 'img/banner_4301_blek gold.jpg' %}" class ="first-slide" alt="Second slide"/>
-
-          <div class="container">
-            <div class="carousel-caption">
-                            <div class="col-sm-6">
-        <h1>Мультиварки MARTA</h1>
-        <p>Мультиварка MARTA 4301
-										скоро в Израиле.</br>
-										Теперь она готовит, 
-										а вы отдыхаете!
-										45 автоматических прорамм</p>
-										
-        <p><a class="btn btn-default btn-lg btn-block" href="#signup"role="button">Узнать первым. &raquo;</a></p>
-        </div> 
-            </div>
-          </div>
-        </div>
-        <div class="item">
-                  <img src="{% static 'img/banner_4301_white-ss.jpg' %}" class ="first-slide" alt="Third slide"/>
-          <div class="container">
-            <div class="carousel-caption">
-            <div class="col-sm-6">
-        <h1>Мультиварки MARTA</h1>
-        <p>Мультиварка MARTA 4301
-										скоро в Израиле.</br>
-										Теперь она готовит, 
-										а вы отдыхаете!
-										45 автоматических прорамм</p>
-										
-        <p><a class="btn btn-default btn-lg btn-block" href="#signup"role="button">Узнать первым. &raquo;</a></p>
-        </div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
-        <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
-        <span class="sr-only">Previous</span>
-      </a>
-      <a class="right carousel-control" href="#myCarousel" role="button" data-slide="next">
-        <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
-        <span class="sr-only">Next</span>
-      </a>
-    </div>
-    </div> 
-
-	<div class='container' style='text-align:center;color:black; ' id="signup" >
-	<div class='col-sm-6 col-sm-offset-3'>
-	<i class="fa fa-unlock fa-5x"></i>
-	  <h1>Узнать подробности и получить книгу рецептов!</h1>
-
-	  <form class='form-horizontal' method="POST" action=""> {% csrf_token %}
-	    <div class='form-group form-group-lg'>
-	        {% if form.email.errors %}
-	     	{% for err in form.email.errors %}
-	    	<div class="alert alert-danger" role="alert">{{ err }}</div>
-	    	<div class="alert alert-danger" role="alert">введите Email</div>
-	    {% endfor %}
-	    {% endif %}
-	     
-	          <div class="input-group">
-	        <input class='form-control' type="email" name="email" placeholder="Ваш email..." />
-	            <span class='input-group-btn'>
-	          <input type='submit' value='Узнать' class='btn btn-primary btn-lg' />
-	          </span>
-	        </div>
-	    </div>
-	  </form>
-	  <p class='lead'>Оставь email. <br/> Будь в курсе!</p>
-	</div>
-</div>
-	    <div class="row featured-row">
-	    	<div class="col-sm-12">
-
-	    		<div class="col-sm-3">
-		    		<i class="fa fa-check-square-o fa-3x"></i>
-		    		<h2>Мультиварка - это?</h2>
-		    		<p class="lead">
-		    		Новейшая разработка для экономии времени. 
-		    		</p>
-	    	    </div>
-	    	    <div class="col-sm-3">
-		    		<i class="fa fa-check-square-o fa-3x"></i>
-		    		<h2>Программы</h2>
-		    		<p class="lead">
-		    		Для каждого блюда уникальная автоматическая программа. 
-		    		</p>
-	    	    </div>
-	    	    <div class="col-sm-3">
-		    		<i class="fa fa-check-square-o fa-3x"></i>
-		    		<h2>3D нагрев</h2>
-		    		<p class="lead">
-		    		Благодря 3D нагреву, пища готовится со всех сторон.
-		    		</p>
-	    	    </div>
-	    	    <div class="col-sm-3">
-		    		<i class="fa fa-check-square-o fa-3x"></i>
-		    		<h2>Шеф-про</h2>
-		    		<p class="lead">
-		    		Технология ручного создания программ.
-		    		</p>
-	    	    </div>
-		    </div>
+			<div class="second-level wrapper pr fullheight fullwidth ovh">
+				<div class="top-part preloader-part"></div>
+				<div class="bottom-part preloader-part"></div>
+			</div>
 		</div>
-		</br>
-	    <aside class="bg-dark" style="max-height: 420px;">
-        <div class="container">  
-            <iframe width="854" height="410" style="padding-left: 280px;" src="http://www.youtube.com/embed/rP2VfF9hkkE" frameborder="0"></iframe>
-        </div>    
-    </aside>
+	</div>
+
+{% include 'navbar.html' %}
+{% include 'main.html' %}
+
+		<section class="pt40 pb40 tbgc3 section-fix booknow-section">
+			<div class="wrapper booknow-section ac">
+				<div class="component">
+					<div class="row">
+						<div class="column large-8">
+							<div class="wrapper mt5"><h3 class="text title ttu fz8 cmt fw3 lss">Сайт в разработке и некотрые функции пока недоступны</h3></div>
+						</div>
+						<div class="column large-4">
+							<div class="wrapper">
+								<span class="button js-booknow-btn"><span class="text fz6 lh22 ttu fw3">Скоро</span></span>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
 
 
+		<section class="section-fix new-abs-section tbgc3" id="aboutus">
+			<div class="wrapper">
+				<div class="row fullwidth nogutter custom-row">
+					<div class="column large-6">
+						<div class="wrapper aboutus-slider js-aboutus-slider owl" data-config='{"items": 1, "smartSpeed": 700}'>
+							<div class="place-item js-place-item" data-location="Jerusalem, IL" data-unit="c">
+								<div class="place-view"><img src="{% static 'img/theme/sm-slider/banner1_img.jpg' %}" alt=""></div>
+								<div class="place-weather wrapper pa top left fullwidth ar">
+									<div class="js-item-weather ar wrapper cw inline"></div>
+								</div>
+							</div>
+							<div class="place-item js-place-item" data-location="Tel Aviv, IL" data-unit="c">
+								<div class="place-view"><img src="{% static 'img/theme/sm-slider/banner2_img.jpg' %}" alt=""></div>
+								<div class="place-weather wrapper pa top left fullwidth ar">
+									<div class="js-item-weather ar wrapper cw inline"></div>
+								</div>
+							</div>
+							<div class="place-item js-place-item" data-location="St. George, US" data-unit="c">
+								<div class="place-view"><img src="{% static 'img/theme/sm-slider/chief.png' %}" alt=""></div>
+								<div class="place-weather wrapper pa top left fullwidth ar">
+									<div class="js-item-weather ar wrapper cw inline"></div>
+								</div>
+							</div>
+							<div class="place-item js-place-item" data-location="Antananarivo, MG" data-unit="c">
+								<div class="place-view"><img src="{% static 'img/theme/sm-slider/chief.png' %}" alt=""></div>
+								<div class="place-weather wrapper pa top left fullwidth ar">
+									<div class="js-item-weather ar wrapper cw inline"></div>
+								</div>
+							</div>
+						</div>
+					</div>
+
+					<div class="column large-6 wrapper p30 new-abs-wrapper">
+						<div class="row">
+							<div class="column">
+								<h2 class="text fz8 fw3 ttu lsm mb30 ctm ac">about us</h2>
+							</div>
+						</div>
+
+						<div class="row">
+							<div class="column medium-6 wrapper pr15 pl15">
+								<div class="component ac about-item">
+									<div class="wrapper mb20 pr">
+										<div class="wrapper pr icon">
+											<div class="wrapper lh0">
+												<span class="text fz9 cm">
+													<i class="pe-7s-anchor"></i>
+												</span>
+											</div>
+										</div>
+									</div>
+									<p class="text fw3 fz3 fsi mb80 ctm lh14">
+										Etiam vitae ultricies arcu. Vivamus dapibus, ligula non auctor convallis, justo est maximus leo, ac gravida lectus odio vel justo. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque a lectus.
+									</p>
+								</div>
+							</div>
+							<div class="column medium-6 wrapper pr15 pl15">
+								<div class="component ac about-item">
+									<div class="wrapper mb20 pr">
+										<div class="wrapper pr icon">
+											<div class="wrapper lh0">
+												<span class="text fz9 cm">
+													<i class="pe-7s-signal"></i>
+												</span>
+											</div>
+										</div>
+									</div>
+									<p class="text fw3 fz3 fsi mb80 ctm lh14">
+										Etiam vitae ultricies arcu. Vivamus dapibus, ligula non auctor convallis, justo est maximus leo, ac gravida lectus odio vel justo. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque a lectus.
+									</p>
+								</div>
+							</div>
+						</div>
+
+						<div class="row">
+							<div class="column medium-6 wrapper pr15 pl15">
+								<div class="component ac about-item">
+									<div class="wrapper mb20 pr">
+										<div class="wrapper pr icon">
+											<div class="wrapper lh0">
+												<span class="text fz9 cm">
+													<i class="pe-7s-settings"></i>
+												</span>
+											</div>
+										</div>
+									</div>
+									<p class="text fw3 fz3 fsi mb80 ctm lh14">
+										Etiam vitae ultricies arcu. Vivamus dapibus, ligula non auctor convallis, justo est maximus leo, ac gravida lectus odio vel justo. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque a lectus.
+									</p>
+								</div>
+							</div>
+							<div class="column medium-6 wrapper pr15 pl15">
+								<div class="component ac about-item">
+									<div class="wrapper mb20 pr">
+										<div class="wrapper pr icon">
+											<div class="wrapper lh0">
+												<span class="text fz9 cm">
+													<i class="pe-7s-leaf"></i>
+												</span>
+											</div>
+										</div>
+									</div>
+									<p class="text fw3 fz3 fsi mb80 ctm lh14">
+										Etiam vitae ultricies arcu. Vivamus dapibus, ligula non auctor convallis, justo est maximus leo, ac gravida lectus odio vel justo. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque a lectus.
+									</p>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+		<section class="tbgc1 pt50 section-fix" id="tours">
+			<div class="wrapper">
+				<div class="row">
+					<div class="column large-12">
+						<h2 class="text fz8 fw3 ttu lsm mb30 title ac">Мультиварки</h2>
+					</div>
+				</div>
+				<div class="row">
+					<div class="column">
+						<div class="portfoliofilters ac">
+							<ul class="list inline xsgutter mb50">
+								<li><span class="text fz3 fsi fw3 ttu">Сортироваить:</span></li>
+								<li class="portfoliofilter active" data-group="all"><span class="text fz3 fsi fw3 ttu pointer">Все</span></li>
+								<li class="portfoliofilter" data-group="pressure-cooker"><span class="text fz3 fsi fw3 ttu pointer">Скороварки</span></li>
+{#								<li class="portfoliofilter" data-group="canada"><span class="text fz3 fsi fw3 ttu pointer">Canada</span></li>#}
+{#								<li class="portfoliofilter" data-group="uk"><span class="text fz3 fsi fw3 ttu pointer">United Kingdom</span></li>#}
+{#								<li class="portfoliofilter" data-group="taiwan"><span class="text fz3 fsi fw3 ttu pointer">Taiwan</span></li>#}
+{#								<li class="portfoliofilter" data-group="fiji"><span class="text fz3 fsi fw3 ttu pointer">Fiji</span></li>#}
+							</ul>
+						</div>
+					</div>
+				</div>
+				<div class="row fullwidth nogutter">
+					<div class="column large-12">
+						<div class="portfolio component">
+							<div class="sizer"></div>
+							<div class="item wrapper p5" data-groups='["italy", "fiji"]'>
+								<div class="js-offer-block">
+									<div class="wrapper pa fullwidth fullheight zim">
+										<div class="wrapper fullwidth pa left bottom description">
+											<div class="wrapper aj pr20 pl20 pb10 pt15">
+												<h3 class="text vam fz5 cw fw3 js-name inline mr5">Marta</h3>
+												<div class="wrapper vam mt5 js-cost inline">
+													<span class="inline vat text fz9 fw3 lh1 cw">0</span>
+													<span class="inline vat text fz6 fw3 lh1 cw mt5 ml10">&#8362;</span>
+												</div>
+												<div class="item-details hide">
+													<p class="js-description">
+														Aenean in nulla posuere, volutpat magna non, fermentum lacus. Nunc auctor arcu eget lobortis cursus. Quisque a enim ornare, molestie nulla at, posuere metus. Mauris consequat libero sed velit fermentum, sit amet ntesque et lacus vitae, vehicula aliquet tortor.Aenean in nulla posuere, volutpat magna non, fermentum lacus.
+														<br>
+														Nunc auctor arcu eget lobortis cursus. Quisque a enim ornare, molestie nulla at, posuere metus. Mauris consequat libero sed velit fermentum, sit amet ntesque et lacus vitae, vehicula aliquet tortor.
+													</p>
+
+													<div class="days-list">
+														<div class="day">
+															<p class="js-title">Description 1</p>
+															<p class="js-acc-description">Aenean in nulla posuere, volutpat magna non, fermentum lacus. Nunc auctor arcu eget lobortis cursus. Quisque a enim ornare, molestie nulla at, posuere metus.</p>
+														</div>
+														<div class="day">
+															<p class="js-title">Description 2</p>
+															<p class="js-acc-description">Aenean in nulla posuere, volutpat magna non, fermentum lacus. Nunc auctor arcu eget lobortis cursus. Quisque a enim ornare, molestie nulla at, posuere metus.</p>
+														</div>
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+									<img src="{% static 'img/theme/products/MT-4301_black-gold.jpg' %}" class="image" alt="portfolio" data-path="{% static 'img/theme/products/MT-4301_black-gold.jpg' %}" data-large-images='["400x260", "400x260", "400x260"]'/>
+                                    <span class="pointer js-show-details portfolio-view-more wrapper pa fullwidth fullheight zil" >
+									</span>
+								</div>
+							</div>
+							<div class="item wrapper p5" data-groups='["uk", "taiwan", "fiji"]'>
+								<div class="js-offer-block">
+									<div class="wrapper pa fullwidth fullheight zim">
+										<div class="wrapper fullwidth pa left bottom description">
+											<div class="wrapper aj pr20 pl20 pb10 pt15">
+												<h3 class="text vam fz5 cw fw3 inline mr5">Weekend surfing</h3>
+												<div class="wrapper vam js-cost inline">
+													<span class="inline vat text fz9 fw3 lh1 cw">0</span>
+													<span class="inline vat text fz6 fw3 lh1 cw mt5 ml10">$</span>
+												</div>
+												<div class="item-details hide">
+													<p class="js-description">
+														Aenean in nulla posuere, volutpat magna non, fermentum lacus. Nunc auctor arcu eget lobortis cursus. Quisque a enim ornare, molestie nulla at, posuere metus. Mauris consequat libero sed velit fermentum, sit amet ntesque et lacus vitae, vehicula aliquet tortor.Aenean in nulla posuere, volutpat magna non, fermentum lacus.
+														<br>
+														Nunc auctor arcu eget lobortis cursus. Quisque a enim ornare, molestie nulla at, posuere metus. Mauris consequat libero sed velit fermentum, sit amet ntesque et lacus vitae, vehicula aliquet tortor.
+													</p>
+
+													<div class="days-list">
+														<div class="day">
+															<p class="js-title">1st Day</p>
+															<p class="js-acc-description">Aenean in nulla posuere, volutpat magna non, fermentum lacus. Nunc auctor arcu eget lobortis cursus. Quisque a enim ornare, molestie nulla at, posuere metus.</p>
+														</div>
+														<div class="day">
+															<p class="js-title">2nd Day</p>
+															<p class="js-acc-description">Aenean in nulla posuere, volutpat magna non, fermentum lacus. Nunc auctor arcu eget lobortis cursus. Quisque a enim ornare, molestie nulla at, posuere metus.</p>
+														</div>
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+									<img src="{% static 'img/theme/products/MT-4301_black-red.jpg' %}" class="image" alt="portfolio" data-large-images='["400x260", "400x260", "400x260"]'/>
+									<span class="pointer js-show-details portfolio-view-more wrapper pa fullwidth fullheight zil" >
+									</span>
+								</div>
+							</div>
+							<div class="item wrapper p5" data-groups='["italy", "taiwan", "fiji"]'>
+								<div class="js-offer-block">
+									<div class="wrapper pa fullwidth fullheight zim">
+										<div class="wrapper fullwidth pa left bottom description">
+											<div class="wrapper aj pr20 pl20 pb10 pt15">
+												<h3 class="text vam fz5 cw fw3 inline mr5">Weekend surfing</h3>
+												<div class="wrapper vam js-cost inline">
+													<span class="inline vat text fz9 fw3 lh1 cw">0</span>
+													<span class="inline vat text fz6 fw3 lh1 cw mt5 ml10">$</span>
+												</div>
+												<div class="item-details hide">
+													<p class="js-description">
+														Aenean in nulla posuere, volutpat magna non, fermentum lacus. Nunc auctor arcu eget lobortis cursus. Quisque a enim ornare, molestie nulla at, posuere metus. Mauris consequat libero sed velit fermentum, sit amet ntesque et lacus vitae, vehicula aliquet tortor.Aenean in nulla posuere, volutpat magna non, fermentum lacus.
+														<br>
+														Nunc auctor arcu eget lobortis cursus. Quisque a enim ornare, molestie nulla at, posuere metus. Mauris consequat libero sed velit fermentum, sit amet ntesque et lacus vitae, vehicula aliquet tortor.
+													</p>
+
+													<div class="days-list">
+														<div class="day">
+															<p class="js-title">1st Day</p>
+															<p class="js-acc-description">Aenean in nulla posuere, volutpat magna non, fermentum lacus. Nunc auctor arcu eget lobortis cursus. Quisque a enim ornare, molestie nulla at, posuere metus.</p>
+														</div>
+														<div class="day">
+															<p class="js-title">2nd Day</p>
+															<p class="js-acc-description">Aenean in nulla posuere, volutpat magna non, fermentum lacus. Nunc auctor arcu eget lobortis cursus. Quisque a enim ornare, molestie nulla at, posuere metus.</p>
+														</div>
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+									<img src="{% static 'img/theme/products/MT-4301_black-ss.jpg' %}" class="image" alt="portfolio" data-large-images='["400x260", "400x260", "400x260"]'/>
+
+                                    <span class="pointer js-show-details portfolio-view-more wrapper pa fullwidth fullheight zil" >
+									</span>
+								</div>
+							</div>
+							<div class="item wrapper p5" data-groups='["italy", "canada", "fiji"]'>
+								<div class="js-offer-block">
+									<div class="wrapper pa fullwidth fullheight zim">
+										<div class="wrapper fullwidth pa left bottom description">
+											<div class="wrapper aj pr20 pl20 pb10 pt15">
+												<h3 class="text vam fz5 cw fw3 inline mr5">Weekend surfing</h3>
+												<div class="wrapper vam js-cost inline">
+													<span class="inline vat text fz9 fw3 lh1 cw">0</span>
+													<span class="inline vat text fz6 fw3 lh1 cw mt5 ml10">$</span>
+												</div>
+												<div class="item-details hide">
+													<p class="js-description">
+														Aenean in nulla posuere, volutpat magna non, fermentum lacus. Nunc auctor arcu eget lobortis cursus. Quisque a enim ornare, molestie nulla at, posuere metus. Mauris consequat libero sed velit fermentum, sit amet ntesque et lacus vitae, vehicula aliquet tortor.Aenean in nulla posuere, volutpat magna non, fermentum lacus.
+														<br>
+														Nunc auctor arcu eget lobortis cursus. Quisque a enim ornare, molestie nulla at, posuere metus. Mauris consequat libero sed velit fermentum, sit amet ntesque et lacus vitae, vehicula aliquet tortor.
+													</p>
+
+													<div class="days-list">
+														<div class="day">
+															<p class="js-title">1st Day</p>
+															<p class="js-acc-description">Aenean in nulla posuere, volutpat magna non, fermentum lacus. Nunc auctor arcu eget lobortis cursus. Quisque a enim ornare, molestie nulla at, posuere metus.</p>
+														</div>
+														<div class="day">
+															<p class="js-title">2nd Day</p>
+															<p class="js-acc-description">Aenean in nulla posuere, volutpat magna non, fermentum lacus. Nunc auctor arcu eget lobortis cursus. Quisque a enim ornare, molestie nulla at, posuere metus.</p>
+														</div>
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+									<img src="{% static 'img/theme/products/MT-4301_white-champagne.jpg' %}" class="image" alt="portfolio" data-large-images='["400x260", "400x260", "400x260"]'/>
+									<span class="pointer js-show-details portfolio-view-more wrapper pa fullwidth fullheight zil" >
+									</span>
+								</div>
+							</div>
+							<div class="item wrapper p5" data-groups='["canada", "uk", "fiji"]'>
+								<div class="js-offer-block">
+									<div class="wrapper pa fullwidth fullheight zim">
+										<div class="wrapper fullwidth pa left bottom description">
+											<div class="wrapper aj pr20 pl20 pb10 pt15">
+												<h3 class="text vam fz5 cw fw3 inline mr5">Weekend surfing</h3>
+												<div class="wrapper vam js-cost inline">
+													<span class="inline vat text fz9 fw3 lh1 cw">0</span>
+													<span class="inline vat text fz6 fw3 lh1 cw mt5 ml10">$</span>
+												</div>
+												<div class="item-details hide">
+													<p class="js-description">
+														Aenean in nulla posuere, volutpat magna non, fermentum lacus. Nunc auctor arcu eget lobortis cursus. Quisque a enim ornare, molestie nulla at, posuere metus. Mauris consequat libero sed velit fermentum, sit amet ntesque et lacus vitae, vehicula aliquet tortor.Aenean in nulla posuere, volutpat magna non, fermentum lacus.
+														<br>
+														Nunc auctor arcu eget lobortis cursus. Quisque a enim ornare, molestie nulla at, posuere metus. Mauris consequat libero sed velit fermentum, sit amet ntesque et lacus vitae, vehicula aliquet tortor.
+													</p>
+
+													<div class="days-list">
+														<div class="day">
+															<p class="js-title">1st Day</p>
+															<p class="js-acc-description">Aenean in nulla posuere, volutpat magna non, fermentum lacus. Nunc auctor arcu eget lobortis cursus. Quisque a enim ornare, molestie nulla at, posuere metus.</p>
+														</div>
+														<div class="day">
+															<p class="js-title">2nd Day</p>
+															<p class="js-acc-description">Aenean in nulla posuere, volutpat magna non, fermentum lacus. Nunc auctor arcu eget lobortis cursus. Quisque a enim ornare, molestie nulla at, posuere metus.</p>
+														</div>
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+									<img src="{% static 'img/theme/products/MT-4301_white-ss.jpg' %}" class="image" alt="portfolio" data-large-images='["400x260", "400x260", "400x260"]'/>
+									<span class="pointer js-show-details portfolio-view-more wrapper pa fullwidth fullheight zil" >
+									</span>
+								</div>
+							</div>
+							<div class="item wrapper p5" data-groups='["pressure-cooker"]'>
+								<div class="js-offer-block">
+									<div class="wrapper pa fullwidth fullheight zim">
+										<div class="wrapper fullwidth pa left bottom description">
+											<div class="wrapper aj pr20 pl20 pb10 pt15">
+												<h3 class="text vam fz5 cw fw3 inline mr5">Weekend surfing</h3>
+												<div class="wrapper vam js-cost inline">
+													<span class="inline vat text fz9 fw3 lh1 cw">0</span>
+													<span class="inline vat text fz6 fw3 lh1 cw mt5 ml10">$</span>
+												</div>
+												<div class="item-details hide">
+													<p class="js-description">
+														Aenean in nulla posuere, volutpat magna non, fermentum lacus. Nunc auctor arcu eget lobortis cursus. Quisque a enim ornare, molestie nulla at, posuere metus. Mauris consequat libero sed velit fermentum, sit amet ntesque et lacus vitae, vehicula aliquet tortor.Aenean in nulla posuere, volutpat magna non, fermentum lacus.
+														<br>
+														Nunc auctor arcu eget lobortis cursus. Quisque a enim ornare, molestie nulla at, posuere metus. Mauris consequat libero sed velit fermentum, sit amet ntesque et lacus vitae, vehicula aliquet tortor.
+													</p>
+
+													<div class="days-list">
+														<div class="day">
+															<p class="js-title">1st Day</p>
+															<p class="js-acc-description">Aenean in nulla posuere, volutpat magna non, fermentum lacus. Nunc auctor arcu eget lobortis cursus. Quisque a enim ornare, molestie nulla at, posuere metus.</p>
+														</div>
+														<div class="day">
+															<p class="js-title">2nd Day</p>
+															<p class="js-acc-description">Aenean in nulla posuere, volutpat magna non, fermentum lacus. Nunc auctor arcu eget lobortis cursus. Quisque a enim ornare, molestie nulla at, posuere metus.</p>
+														</div>
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+									<img src="{% static 'img/theme/products/MT-4309_black-red.jpg' %}" class="image" alt="portfolio" data-large-images='["400x260", "400x260", "400x260"]'/>
+									<span class="pointer js-show-details portfolio-view-more wrapper pa fullwidth fullheight zil" >
+									</span>
+								</div>
+							</div>
+							<div class="item wrapper p5" data-groups='["pressure-cooker"]'>
+								<div class="js-offer-block">
+									<div class="wrapper pa fullwidth fullheight zim">
+										<div class="wrapper fullwidth pa left bottom description">
+											<div class="wrapper aj pr20 pl20 pb10 pt15">
+												<h3 class="text vam fz5 cw fw3 inline mr5">Weekend surfing</h3>
+												<div class="wrapper vam js-cost inline">
+													<span class="inline vat text fz9 fw3 lh1 cw">0</span>
+													<span class="inline vat text fz6 fw3 lh1 cw mt5 ml10">$</span>
+												</div>
+												<div class="item-details hide">
+													<p class="js-description">
+														Aenean in nulla posuere, volutpat magna non, fermentum lacus. Nunc auctor arcu eget lobortis cursus. Quisque a enim ornare, molestie nulla at, posuere metus. Mauris consequat libero sed velit fermentum, sit amet ntesque et lacus vitae, vehicula aliquet tortor.Aenean in nulla posuere, volutpat magna non, fermentum lacus.
+														<br>
+														Nunc auctor arcu eget lobortis cursus. Quisque a enim ornare, molestie nulla at, posuere metus. Mauris consequat libero sed velit fermentum, sit amet ntesque et lacus vitae, vehicula aliquet tortor.
+													</p>
+
+													<div class="days-list">
+														<div class="day">
+															<p class="js-title">1st Day</p>
+															<p class="js-acc-description">Aenean in nulla posuere, volutpat magna non, fermentum lacus. Nunc auctor arcu eget lobortis cursus. Quisque a enim ornare, molestie nulla at, posuere metus.</p>
+														</div>
+														<div class="day">
+															<p class="js-title">2nd Day</p>
+															<p class="js-acc-description">Aenean in nulla posuere, volutpat magna non, fermentum lacus. Nunc auctor arcu eget lobortis cursus. Quisque a enim ornare, molestie nulla at, posuere metus.</p>
+														</div>
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+									<img src="{% static 'img/theme/products/MT-4309_black-ss.jpg' %}" class="image" alt="portfolio" data-large-images='["400x260", "400x260", "400x260"]'/>
+									<span class="pointer js-show-details portfolio-view-more wrapper pa fullwidth fullheight zil" >
+									</span>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<section class="section-fix tbgc5 pb70 pt100 withus-section">
+			<div class="row custom-row fullwidth nogutter">
+				<div class="column large-6">
+					<div class="wrapper ac">
+						<h2 class="text fz8 fw3 ttu lsm mb30 title">мы в интернете</h2>
+					</div>
+					<div class="wrapper share-container ac">
+						<div class="wrapper inline share-btn facebook ml15 mr15 mb30">
+							<a href="#">
+								<span class="wrapper inline btn-icon pl20 pr20">
+									<span class="text fa fa-facebook cw lh26 fz4"></span>
+								</span>
+								<span class="wrapper inline btn-space pl20 pr20">
+									<span class="text btn-space ttu cw lsm fw3 lh26 fz4">facebook</span>
+								</span>
+							</a>
+						</div>
+						<div class="wrapper inline share-btn twitter ml15 mr15 mb30">
+							<a href="#">
+								<span class="wrapper inline btn-icon pl20 pr20">
+									<span class="text fa fa-twitter cw lh26 fz4"></span>
+								</span>
+								<span class="wrapper inline btn-space pl20 pr20">
+									<span class="text btn-space ttu cw lsm fw3 lh26 fz4">twitter</span>
+								</span>
+							</a>
+						</div>
+					</div>
+				</div>
+				<div class="column large-6">
+					<div class="wrapper ac">
+						<h2 class="text fz8 fw3 ttu lsm mb30 title">Методы оплаты</h2>
+					</div>
+					<div class="wrapper ac payment-method">
+						<div class="wrapper inline ac method-item mb30">
+							<img src="http://placehold.it/67x18" alt="">
+						</div>
+						<div class="wrapper inline ac method-item mb30">
+							<img src="http://placehold.it/67x18" alt="">
+						</div>
+						<div class="wrapper inline ac method-item mb30">
+							<img src="http://placehold.it/67x18" alt="">
+						</div>
+						<div class="wrapper inline ac method-item mb30">
+							<img src="http://placehold.it/67x18" alt="">
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<section class="tbgc1 section-fix pb70 pt70 wrapper">
+			<div class="row">
+				<div class="column large-12">
+					<h2 class="text fz8 fw3 ttu lsm mb30 title ac">Дополнительная информация</h2>
+				</div>
+			</div>
+			<div class="row">
+				<div class="column large-4">
+					<div class="wrapper mb30 deal-wrapper">
+						<div class="wrapper tbgc1 ac pt20 pb20 item-title">
+							<h4 class="text fw3 fz4 c6 ttu lsm">информация</h4>
+						</div>
+						<div class="wrapper tbgc3 p40">
+							<div class="deal-item wrapper mb15">
+								<p class="text c6 fz4 lh12 fw3 fsi clear">
+									Lorem ipsum dolor sit amet
+									<span class="price text fw3 fz4 lss cmt fr">50$</span>
+								</p>
+							</div>
+							<div class="deal-item wrapper mb15">
+								<p class="text c6 fz4 lh12 fw3 fsi clear">
+									Etiam ultrices ornare lacus
+									<span class="price text fw3 fz4 lss cmt fr">30$</span>
+								</p>
+							</div>
+							<div class="deal-item wrapper mb15">
+								<p class="text c6 fz4 lh12 fw3 fsi clear">
+									Fusce iaculis dictum lorem
+									<span class="price text fw3 fz4 lss cmt fr">45$</span>
+								</p>
+							</div>
+							<div class="deal-item wrapper mb15">
+								<p class="text c6 fz4 lh12 fw3 fsi clear">
+									Nam dapibus turpis
+									<span class="price text fw3 fz4 lss cmt fr">45$</span>
+								</p>
+							</div>
+							<div class="deal-item wrapper mb15">
+								<p class="text c6 fz4 lh12 fw3 fsi clear">
+									Vivamus risus orci, porta sed
+									<span class="price text fw3 fz4 lss cmt fr">35$</span>
+								</p>
+							</div>
+							<div class="deal-item wrapper">
+								<p class="text c6 fz4 lh12 fw3 fsi clear">
+									Proin gravida, quam quis
+									<span class="price text fw3 fz4 lss cmt fr">55$</span>
+								</p>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="column large-4">
+					<div class="wrapper mb30 deal-wrapper">
+						<div class="wrapper tbgc1 ac pt20 pb20 item-title">
+							<h4 class="text fw3 fz4 c6 ttu lsm">информация</h4>
+						</div>
+						<div class="wrapper tbgc3 p40">
+							<div class="deal-item wrapper mb15">
+								<p class="text c6 fz4 lh12 fw3 fsi clear">
+									Lorem ipsum dolor sit amet
+									<span class="price text fw3 fz4 lss cmt fr">50$</span>
+								</p>
+							</div>
+							<div class="deal-item wrapper mb15">
+								<p class="text c6 fz4 lh12 fw3 fsi clear">
+									Etiam ultrices ornare lacus
+									<span class="price text fw3 fz4 lss cmt fr">30$</span>
+								</p>
+							</div>
+							<div class="deal-item wrapper mb15">
+								<p class="text c6 fz4 lh12 fw3 fsi clear">
+									Fusce iaculis dictum lorem
+									<span class="price text fw3 fz4 lss cmt fr">45$</span>
+								</p>
+							</div>
+							<div class="deal-item wrapper mb15">
+								<p class="text c6 fz4 lh12 fw3 fsi clear">
+									Nam dapibus turpis
+									<span class="price text fw3 fz4 lss cmt fr">45$</span>
+								</p>
+							</div>
+							<div class="deal-item wrapper mb15">
+								<p class="text c6 fz4 lh12 fw3 fsi clear">
+									Vivamus risus orci, porta sed
+									<span class="price text fw3 fz4 lss cmt fr">35$</span>
+								</p>
+							</div>
+							<div class="deal-item wrapper">
+								<p class="text c6 fz4 lh12 fw3 fsi clear">
+									Proin gravida, quam quis
+									<span class="price text fw3 fz4 lss cmt fr">55$</span>
+								</p>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="column large-4">
+					<div class="wrapper mb30 deal-wrapper">
+						<div class="wrapper tbgc1 ac pt20 pb20 item-title">
+							<h4 class="text fw3 fz4 c6 ttu lsm">информация</h4>
+						</div>
+						<div class="wrapper tbgc3 p40">
+							<div class="deal-item wrapper mb15">
+								<p class="text c6 fz4 lh12 fw3 fsi clear">
+									Lorem ipsum dolor sit amet
+									<span class="price text fw3 fz4 lss cmt fr">50$</span>
+								</p>
+							</div>
+							<div class="deal-item wrapper mb15">
+								<p class="text c6 fz4 lh12 fw3 fsi clear">
+									Etiam ultrices ornare lacus
+									<span class="price text fw3 fz4 lss cmt fr">30$</span>
+								</p>
+							</div>
+							<div class="deal-item wrapper mb15">
+								<p class="text c6 fz4 lh12 fw3 fsi clear">
+									Fusce iaculis dictum lorem
+									<span class="price text fw3 fz4 lss cmt fr">45$</span>
+								</p>
+							</div>
+							<div class="deal-item wrapper mb15">
+								<p class="text c6 fz4 lh12 fw3 fsi clear">
+									Nam dapibus turpis
+									<span class="price text fw3 fz4 lss cmt fr">45$</span>
+								</p>
+							</div>
+							<div class="deal-item wrapper mb15">
+								<p class="text c6 fz4 lh12 fw3 fsi clear">
+									Vivamus risus orci, porta sed
+									<span class="price text fw3 fz4 lss cmt fr">35$</span>
+								</p>
+							</div>
+							<div class="deal-item wrapper">
+								<p class="text c6 fz4 lh12 fw3 fsi clear">
+									Proin gravida, quam quis
+									<span class="price text fw3 fz4 lss cmt fr">55$</span>
+								</p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<section class="parallax-fix top-offers-section">
+			<div class="parallax bg3"></div>
+			<div class="wrapper pt100 pb60">
+				<div class="row">
+					<div class="column medium-6">
+						<div class="wrapper ac">
+							<h4 class="text title lsm ttu fw3 cw fz8 mb40 ac">Unforgetable Honeymoon</h4>
+						</div>
+					</div>
+					<div class="column medium-6">
+						<div class="wrapper">
+							<div class="wrapper component offer-item-wrapper js-offer-block mb40">
+								<div class="row">
+									<div class="column small-12 large-6">
+										<div class="wrapper  ovh pr offer-thumb js-show-details pointer">
+											<span class="lines-container pa fullheight fullwidth wrapper"></span>
+											<img src="http://placehold.it/300x225" alt="" class="image fullwidth pointer" data-path="http://placehold.it/" data-large-images='["360x442", "360x442", "360x442"]'>
+											<div class="wrapper pa fullwidth left bottom pb15 price-palette pt15">
+												<p class="text cw fz6 lh1 js-cost ac">
+													5 Days - 2500$
+												</p>
+											</div>
+										</div>
+									</div>
+									<div class="column small-12 large-6">
+										<div class="wrapper">
+											<h4 class="title text fz6 fw3 lh12 cw mb5 pointer mt20 js-show-details js-name">Cinque Terre, Italy</h4>
+											<p class="description text fz1 c6 lh2 mb10 fsi js-description cw fw3">
+												Aenean in nulla posuere, volutpat magna non, fermentum lacus. Nunc auctor arcu eget lobortis cursus. Quisque a enim ornare, molestie nulla at, posuere metus. Mauris consequat libero sed velit fermentum, sit amet ntesque et lacus vitae, vehicula aliquet tortor.Aenean in nulla posuere, volutpat magna non, fermentum lacus.
+												<br>
+												Nunc auctor arcu eget lobortis cursus. Quisque a enim ornare, molestie nulla at, posuere metus. Mauris consequat libero sed velit fermentum, sit amet ntesque et lacus vitae, vehicula aliquet tortor.
+											</p>
+										</div>
+									</div>
+								</div>
+								<div class="row hide">
+									<div class="column large-12">
+										<div class="days-list">
+											<div class="day">
+												<p class="js-title">1st Day</p>
+												<p class="js-acc-description">Aenean in nulla posuere, volutpat magna non, fermentum lacus. Nunc auctor arcu eget lobortis cursus. Quisque a enim ornare, molestie nulla at, posuere metus.</p>
+											</div>
+											<div class="day">
+												<p class="js-title">2nd Day</p>
+												<p class="js-acc-description">Aenean in nulla posuere, volutpat magna non, fermentum lacus. Nunc auctor arcu eget lobortis cursus. Quisque a enim ornare, molestie nulla at, posuere metus.</p>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+
+							<div class="wrapper component offer-item-wrapper js-offer-block mb40">
+								<div class="row">
+									<div class="column small-12 large-6">
+										<div class="wrapper  ovh pr offer-thumb js-show-details pointer">
+											<span class="lines-container pa fullheight fullwidth wrapper"></span>
+											<img src="http://placehold.it/300x225" alt="" class="image fullwidth pointer" data-path="http://placehold.it/" data-large-images='["360x442", "360x442", "360x442"]'>
+											<div class="wrapper pa fullwidth left bottom pb15 price-palette pt15">
+												<p class="text cw fz6 lh1 js-cost ac">
+													5 Days - 2500$
+												</p>
+											</div>
+										</div>
+									</div>
+									<div class="column small-12 large-6">
+										<div class="wrapper">
+											<h4 class="title text fz6 fw3 lh12 cw mb5 pointer mt20 js-show-details js-name">United Kingdom, London</h4>
+											<p class="description text fz1 c6 lh2 mb10 fsi js-description cw fw3">
+												Aenean in nulla posuere, volutpat magna non, fermentum lacus. Nunc auctor arcu eget lobortis cursus. Quisque a enim ornare, molestie nulla at, posuere metus. Mauris consequat libero sed velit fermentum, sit amet ntesque et lacus vitae, vehicula aliquet tortor.Aenean in nulla posuere, volutpat magna non, fermentum lacus.
+												<br>
+												Nunc auctor arcu eget lobortis cursus. Quisque a enim ornare, molestie nulla at, posuere metus. Mauris consequat libero sed velit fermentum, sit amet ntesque et lacus vitae, vehicula aliquet tortor.
+											</p>
+										</div>
+									</div>
+								</div>
+								<div class="row hide">
+									<div class="column large-12">
+										<div class="days-list">
+											<div class="day">
+												<p class="js-title">1st Day</p>
+												<p class="js-acc-description">Aenean in nulla posuere, volutpat magna non, fermentum lacus. Nunc auctor arcu eget lobortis cursus. Quisque a enim ornare, molestie nulla at, posuere metus.</p>
+											</div>
+											<div class="day">
+												<p class="js-title">2nd Day</p>
+												<p class="js-acc-description">Aenean in nulla posuere, volutpat magna non, fermentum lacus. Nunc auctor arcu eget lobortis cursus. Quisque a enim ornare, molestie nulla at, posuere metus.</p>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+
+							<div class="wrapper component offer-item-wrapper js-offer-block mb40">
+								<div class="row">
+									<div class="column small-12 large-6">
+										<div class="wrapper  ovh pr offer-thumb js-show-details pointer">
+											<span class="lines-container pa fullheight fullwidth wrapper"></span>
+											<img src="http://placehold.it/300x225" alt="" class="image fullwidth pointer" data-path="http://placehold.it/" data-large-images='["360x442", "360x442", "360x442"]'>
+											<div class="wrapper pa fullwidth left bottom pb15 price-palette pt15">
+												<p class="text cw fz6 lh1 js-cost ac">
+													5 Days - 2500$
+												</p>
+											</div>
+										</div>
+									</div>
+									<div class="column small-12 large-6">
+										<div class="wrapper">
+											<h4 class="title text fz6 fw3 lh12 cw mb5 pointer mt20 js-show-details js-name">Banff, Canada</h4>
+											<p class="description text fz1 c6 lh2 mb10 fsi js-description cw fw3">
+												Aenean in nulla posuere, volutpat magna non, fermentum lacus. Nunc auctor arcu eget lobortis cursus. Quisque a enim ornare, molestie nulla at, posuere metus. Mauris consequat libero sed velit fermentum, sit amet ntesque et lacus vitae, vehicula aliquet tortor.Aenean in nulla posuere, volutpat magna non, fermentum lacus.
+												<br>
+												Nunc auctor arcu eget lobortis cursus. Quisque a enim ornare, molestie nulla at, posuere metus. Mauris consequat libero sed velit fermentum, sit amet ntesque et lacus vitae, vehicula aliquet tortor.
+											</p>
+										</div>
+									</div>
+								</div>
+								<div class="row hide">
+									<div class="column large-12">
+										<div class="days-list">
+											<div class="day">
+												<p class="js-title">1st Day</p>
+												<p class="js-acc-description">Aenean in nulla posuere, volutpat magna non, fermentum lacus. Nunc auctor arcu eget lobortis cursus. Quisque a enim ornare, molestie nulla at, posuere metus.</p>
+											</div>
+											<div class="day">
+												<p class="js-title">2nd Day</p>
+												<p class="js-acc-description">Aenean in nulla posuere, volutpat magna non, fermentum lacus. Nunc auctor arcu eget lobortis cursus. Quisque a enim ornare, molestie nulla at, posuere metus.</p>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
 
 
+		<section class="tbgc1 section-fix">
+			<div class="wrapper pt50 pb100">
+				<div class="row">
+					<div class="column large-12">
+						<h2 class="text fz8 fw3 ttu lsm mb30 title ac">Партнеры</h2>
+					</div>
+				</div>
+				<div class="row">
+					<div class="column large-12">
+						<div class="wrapper">
+							<div class="clients component owl" data-config='{"responsive": {"1024":{"items": 4}, "500":{"items": 2}, "1025": {"items": 6}, "0":{"items": 1} } }'>
+								<div class="client ac">
+									<img src="http://placehold.it/165x119" alt="client" class="image wa ac">
+								</div>
+								<div class="client ac">
+									<img src="http://placehold.it/165x119" alt="client" class="image wa ac">
+								</div>
+								<div class="client ac">
+									<img src="http://placehold.it/165x119" alt="client" class="image wa ac">
+								</div>
+								<div class="client ac">
+									<img src="http://placehold.it/165x119" alt="client" class="image wa ac">
+								</div>
+								<div class="client ac">
+									<img src="http://placehold.it/165x119" alt="client" class="image wa ac">
+								</div>
+								<div class="client ac">
+									<img src="http://placehold.it/165x119" alt="client" class="image wa ac">
+								</div>
+								<div class="client ac">
+									<img src="http://placehold.it/165x119" alt="client" class="image wa ac">
+								</div>
+								<div class="client ac">
+									<img src="http://placehold.it/165x119" alt="client" class="image wa ac">
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
 
- 
-{% endblock %}	
+		<section class="parallax-fix">
+			<div class="parallax bg2"></div>
+			<div class="wrapper pt70 pb70">
+				<div class="row">
+					<div class="column medium-3">
+						<div class="numbers component">
+							<div class="wrapper pt50 pb50 ac">
+								<div class="wrapper dib number mb20">
+									<h4 class="text ff2 fz11 fw1 cw ac odometer">
+										1260
+									</h4>
+								</div>
+								<p class="text cw icon">
+									<i class="pe-7s-key"></i>
+								</p>
+								<p class="text fw3 fz4 ttu cw lsm">мультиварок</p>
+							</div>
+						</div>
+					</div>
+					<div class="column medium-3">
+						<div class="numbers component">
+							<div class="wrapper pt50 pb50 ac">
+								<div class="wrapper dib number mb20">
+									<h4 class="text ff2 fz11 fw1 cw ac odometer">
+										59
+									</h4>
+								</div>
+								<p class="text cw icon">
+									<i class="pe-7s-map"></i>
+								</p>
+								<p class="text fw3 fz4 ttu cw lsm">домов</p>
+							</div>
+						</div>
+					</div>
+					<div class="column medium-3">
+						<div class="numbers component">
+							<div class="wrapper pt50 pb50 ac">
+								<div class="wrapper dib number mb20">
+									<h4 class="text ff2 fz11 fw1 cw ac odometer">
+										25
+									</h4>
+								</div>
+								<p class="text cw icon">
+									<i class="pe-7s-like"></i>
+								</p>
+								<p class="text fw3 fz4 ttu cw lsm">городов</p>
+							</div>
+						</div>
+					</div>
+					<div class="column medium-3">
+						<div class="numbers component">
+							<div class="wrapper pt50 pb50 ac">
+								<div class="wrapper dib number mb20">
+									<h4 class="text ff2 fz11 fw1 cw ac odometer">
+										17
+									</h4>
+								</div>
+								<p class="text cw icon">
+									<i class="pe-7s-gleam"></i>
+								</p>
+								<p class="text fw3 fz4 ttu cw lsm">стран</p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<section class="tbgc1 section-fix" id="testimonials">
+			<div class="wrapper pt100 pb100">
+				<div class="row">
+					<div class="column large-12">
+						<div class="testimonials component owl mt50" data-config='{"items": 1}'>
+							<div class="testimonial">
+								<div class="wrapper pb50 pl70 pr70">
+									<div class="wrapper photo mb20 ac">
+										<div class="wrapper dib bgcw pl40 pr40">
+											<img src="http://placehold.it/100x100" alt="testimonaial photo" class="image round wa">
+										</div>
+									</div>
+									<div class="wrapper pl40 pr40">
+										<h4 class="text fz4 fw3 ttu lsm ac mb5 lighttext">
+											Valery
+										</h4>
+										<p class="text fz1 fw3 fsi ac lsm mb20 post">
+											co-founder
+										</p>
+										<p class="text fz3 fw3 fsi ac lighttext">
+											Sed aliquet metus sed est congue, in mollis tortor sodales. Nunc tristique est ac ipsum cursus, sit amet euismod dolor egestas. Vestibulum viverra, nisi et interdum laoreet, nisi tellus vestibulum tortor, sit amet consequat arcu ex ac justo. Proin feugiat a lectus sed lobortis.
+										</p>
+									</div>
+								</div>
+							</div>
+							<div class="testimonial">
+								<div class="wrapper pb50 pl70 pr70">
+									<div class="wrapper photo mb20 ac">
+										<div class="wrapper dib bgcw pl40 pr40">
+											<img src="http://placehold.it/100x100" alt="testimonaial photo" class="image round wa">
+										</div>
+									</div>
+									<div class="wrapper pl40 pr40">
+										<h4 class="text fz4 fw3 ttu lsm ac mb5 lighttext">
+											Alex Doe
+										</h4>
+										<p class="text fz1 fw3 fsi ac lsm mb20 post">
+											photographer
+										</p>
+										<p class="text fz3 fw3 fsi ac lighttext">
+											Sed aliquet metus sed est congue, in mollis tortor sodales. Nunc tristique est ac ipsum cursus, sit amet euismod dolor egestas. Vestibulum viverra, nisi et interdum laoreet, nisi tellus vestibulum tortor, sit amet consequat arcu ex ac justo. Proin feugiat a lectus sed lobortis.
+										</p>
+									</div>
+								</div>
+							</div>
+							<div class="testimonial">
+								<div class="wrapper pb50 pl70 pr70">
+									<div class="wrapper photo mb20 ac">
+										<div class="wrapper dib bgcw pl40 pr40">
+											<img src="http://placehold.it/100x100" alt="testimonaial photo" class="image round wa">
+										</div>
+									</div>
+									<div class="wrapper pl40 pr40">
+										<h4 class="text fz4 fw3 ttu lsm ac mb5 lighttext">
+											Alex Doe
+										</h4>
+										<p class="text fz1 fw3 fsi ac lsm mb20 post">
+											photographer
+										</p>
+										<p class="text fz3 fw3 fsi ac lighttext">
+											Sed aliquet metus sed est congue, in mollis tortor sodales. Nunc tristique est ac ipsum cursus, sit amet euismod dolor egestas. Vestibulum viverra, nisi et interdum laoreet, nisi tellus vestibulum tortor, sit amet consequat arcu ex ac justo. Proin feugiat a lectus sed lobortis.
+										</p>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<section class="tbgc5 section-fix" id="contacts">
+			<div class="wrapper pt100">
+				<div class="row">
+					<div class="column large-12">
+						<h2 class="text fz8 fw3 ttu lsm mb30 cmt title ac">Связаться с нами</h2>
+						<h2 class="text fz8 fw3 ttu lsm mb30 cmt title ac">0549438101</h2>
+					</div>
+				</div>
+				<div class="row">
+					<div class="column large-12 wrapper ovh">
+						<div class="wrapper separator around">
+							<div class="row">
+								<div class="column large-12 wrapper pr">
+									<div class="wrapper pr">
+										<div class="row">
+											<div class="column medium-6">
+												<div class="wrapper p40 component contacts">
+													<div class="wrapper mb40 logo-container">
+														<img src="{% static 'img/theme/logo.png' %}" alt="" class="image">
+													</div>
+													<div class="wrapper mb40">
+														<p class="text fz3 fsi cmt fw3">
+															Phasellus in tempus orci, ac blandit augue. Ut dignissim malesuada suscipit. Donec tristique pulvinar enim, vel consequat magna pharetra varius. Cras sed ex mi. Duis dui erat, facilisis quis sollicitudin vel, sollicitudin ut justo.
+														</p>
+													</div>
+													<div class="wrapper">
+														<div class="list">
+															<li class="mb20">
+																<div class="wrapper pl20 pr">
+																	<div class="wrapper pa left top">
+																		<span class="text cm fz3"><i class="pe-7s-mail"></i></span>
+																	</div>
+																	<p class="text cmt fz3 fw3 lss">lopatinski@gmail.com</p>
+																</div>
+															</li>
+															<li class="mb20">
+																<div class="wrapper pl20 pr">
+																	<div class="wrapper pa left top">
+																		<span class="text cm fz3"><i class="pe-7s-phone"></i></span>
+																	</div>
+																	<p class="text cmt fz3 fw3 lss">0549438101</p>
+																</div>
+															</li>
+															<li class="mb20">
+																<div class="wrapper pl20 pr">
+																	<div class="wrapper pa left top">
+																		<span class="text cm fz3"><i class="pe-7s-map-marker"></i></span>
+																	</div>
+																	<p class="text cmt fz3 fw3 lss">Israel</p>
+																</div>
+															</li>
+														</div>
+													</div>
+												</div>
+											</div>
+											<div class="column medium-6 separator left">
+												<div class="wrapper pt40 pb40 pl90 pr90">
+													<form action="#" class="form contact-form">
+														<div class="wrapper mb10 pr">
+															<input type="text" title="name" name="name_field" class="input required dark pt20 pb20" placeholder="Name">
+															<span class="error-star pt20 pb20"></span>
+														</div>
+														<div class="wrapper mb10 pr">
+															<input type="text" title="email" name="mail_field" class="input required dark pt20 pb20" placeholder="E-mail">
+															<span class="error-star pt20 pb20"></span>
+														</div>
+														<div class="wrapper mb40 pr">
+															<textarea  name="message_field" class="textarea required dark pt20 pb20" placeholder="Leave a message here"></textarea>
+															<span class="error-star pt20 pb20"></span>
+														</div>
+														<div class="wrapper ac">
+															<div class="button dark nopadding js-checkout wrapper pr">
+																<ul class="list inline btn-components">
+																	<li><span class="text ttu fw3 ff1 c6 fz4 lh24 pr30 pl30">send</span></li>
+																	<li class="form-icon"><span class="text icon c6 fz4 lh24 pl10 pr10"><i class="pe-7s-mail-open-file"></i></span></li>
+																</ul>
+																<div class="wrapper form-states">
+																	<div class="wrapper succes pa fullwidth fullheight">
+																		<svg class="wrapper pa acc" enable-background="new 0 0 24 24" version="1.0" viewBox="0 0 24 24" xml:space="preserve">
+																		    <polyline points="20,6 9,17 4,12" class="check-mark"/>
+																		</svg>
+																	</div>
+																	<div class="wrapper error-state pa fullwidth fullheight">
+																		<div class="error-sign wrapper pa acc"></div>
+																	</div>
+																</div>
+															</div>
+														</div>
+													</form>
+												</div>
+
+											</div>
+										</div>
+
+										<div class="wrapper">
+											<div class="wrapper pa ac zil map-pin ac js-map-toggle js-map-btn">
+												<span class="pe-7s-map-marker map-icon"></span>
+											</div>
+											<div class="wrapper pa fullheight fullwidth map-wrapper js-map-wrapper">
+												<div class="wrapper pa ac zil map-pin ac js-map-toggle">
+													<span class="pe-7s-close map-icon"></span>
+												</div>
+												<div id="map-block" class="wrapper pa fullheight fullwidth"  data-lon="37.033871" data-lat="-76.344380"></div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+	</section>
+
+	<footer class="tbgc5 section-fix">
+		<div class="wrapper">
+			<div class="row">
+				<div class="column large-12">
+					<div class="component ac pt40 pb40">
+						<p class="text ctm fz3 lh1">&copy;2014 <a href="http://vsart.me/">Multimarta</a>. All right reserved.</p>
+					</div>
+				</div>
+			</div>
+		</div>
+	</footer>
+
+	<div class="modals">
+		<div class="offer-modal">
+			<div class="wrapper tbgc3 pf fullwidth fullheight top left js-details-wrapper details-wrapper">
+				<div class="table-container">
+					<div class="cell-container">
+						<div class="row ovh wrapper">
+							<div class="column medium-12 large-4 wrapper fullheight offer-slider-column">
+								<div class="offers-slider-container">
+								</div>
+							</div>
+							<div class="column medium-12 large-8">
+								<div class="wrapper pa close-btn pointer ovh js-close-details fa fa-angle-left"> <span class="fw3 text">back</span></div>
+								<div class="wrapper pb30 pt30 pr offer-tabs-container">
+									<div class="wrapper ovh js-details-container">
+										<div class="row">
+											<div class="column large-7">
+												<div class="wrapper">
+													<p class="text cm fz6 lh1 js-item-price mb20"></p>
+													<h4 class="text title fw3 fz6 cmt lh1 mb15 js-item-title"></h4>
+													<div class="description">
+														<p class="item-description text fsi fz1 c6 lh2 mb10"></p>
+													</div>
+												</div>
+											</div>
+											<div class="column large-5">
+												<div class="wrapper">
+													<span class="button js-booknow-btn fullwidth ac"><span class="text fz6 lh22 ttu fw3">book now</span></span>
+												</div>
+												<div class="wrapper js-days-list mt30">
+												</div>
+											</div>
+										</div>
+									</div>
+									<div class="wrapper js-book-container book-container pa fullwidth fullheight top right tbgc3 pt20 pb20">
+										<h4 class="title fz6 cmt lh14 fw3 text mt5 mb-10">Pre-Order</h4>
+										<div class="wrapper mt50">
+											<form action="#" class="form">
+												<div class="row">
+													<div class="medium-6 column ar">
+														<div class="wrapper mb20 ml15 mr15 inline field-container pr">
+															<input type="text" title="name" name="name_field" class="input required pl20 book-field" placeholder="Name">
+															<span class="error-star"></span>
+														</div>
+													</div>
+													<div class="medium-6 column al">
+														<div class="wrapper mb20 ml15 mr15 inline field-container pr">
+															<input type="text" title="phone" name="phone_field" class="input required pl20 book-field" placeholder="Phone">
+															<span class="error-star"></span>
+														</div>
+													</div>
+												</div>
+
+												<div class="row">
+													<div class="medium-6 column ar">
+														<div class="wrapper mb20 ml15 mr15 inline field-container pr">
+															<input type="text" name="mail_field" title="email" class="input required pl20 book-field" placeholder="Email">
+															<span class="error-star"></span>
+														</div>
+														<div class="wrapper mb20 ml15 mr15 inline field-container pr">
+															<input type="date" title="date" name="date_field" required class="input required pl20 pr10 book-field" placeholder="Date">
+															<span class="error-star"></span>
+														</div>
+													</div>
+													<div class="medium-6 column al">
+														<div class="wrapper mb20 ml15 mr15 inline field-container pr">
+															<textarea  name="message_field" class="textarea required pl20 pb10 book-field" placeholder="Message"></textarea>
+															<span class="error-star"></span>
+														</div>
+													</div>
+												</div>
+												<div class="row hide">
+													<input type="text" name="order_name" class="order-name-field">
+													<input type="text" name="order_price" class="order-price-field">
+													<input type="text" name="type" value="preOrder">
+												</div>
+
+												<div class="row">
+													<div class="medium-12 column">
+														<span class="button js-checkout wrapper pr">
+															<span class="text fz6 lh22 ttu fw3">Send</span>
+															<div class="wrapper form-states">
+																<div class="wrapper succes pa fullwidth fullheight">
+																	<svg class="wrapper pa acc" enable-background="new 0 0 24 24" version="1.0" viewBox="0 0 24 24" xml:space="preserve">
+																	    <polyline points="20,6 9,17 4,12" class="check-mark"/>
+																	</svg>
+																</div>
+																<div class="wrapper error-state pa fullwidth fullheight">
+																	<div class="error-sign wrapper pa acc"></div>
+																</div>
+															</div>
+														</span>
+													</div>
+												</div>
+											</form>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+{% endblock %}
