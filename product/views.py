@@ -8,9 +8,6 @@ from product.models import (
 )
 
 
-class ProductMixin(object):
+class ProductList(ListView):
     model = Product
-
-
-class ProductList(ProductMixin, ListView):
-    pass
+    template_name = 'home.html'

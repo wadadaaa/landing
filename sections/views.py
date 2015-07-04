@@ -8,9 +8,7 @@ from sections.models import (
 )
 
 
-class AboutList(object):
+class AboutList(ListView):
     model = About
+    template_name = 'home.html'
 
-
-class AboutList(AboutList, ListView):
-    pass
