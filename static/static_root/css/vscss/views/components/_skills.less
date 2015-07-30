@@ -1,0 +1,45 @@
+.skills{
+	.skillbar {
+		height: 2px;
+		background-color: #e1e1e1;
+
+		.progress {
+			height: 2px;
+			width: 0%;
+			background-color: @mainColor;
+		}
+
+	}
+
+	.name{
+		color: #a1a1a1;
+	}
+
+	&.dial {
+		canvas {
+		}
+
+		input {
+			-webkit-transform: translateY(3px);
+			   -moz-transform: translateY(3px);
+			    -ms-transform: translateY(3px);
+			     -o-transform: translateY(3px);
+			        transform: translateY(3px);
+		}
+	}
+}
+
+body[data-colorTheme="dark"] .skills {
+
+	.skillbar {
+		background-color: #2a2a2a;
+	}
+
+	.name {
+		color: #5a5a5a;
+	}
+
+	.skillprogress {
+		color: @mainColor;		
+	}
+}

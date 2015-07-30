@@ -1,81 +1,57 @@
 {% load staticfiles %}
-<section role="main" class="sections-container">
+
+	<section role="main" class="sections-container">
 		<section class="section-fix js-first-screen first-screen-section">
 			<div class="wrapper fullheight">
-				<div class="video-container">
-{#						<video preload="auto" loop class="cover-el" poster="{% static 'img/theme/slider/banner_4309_white.jpg' %}" muted>#}
-                        <video  preload="auto" loop class="cover-el" poster="{% static 'img/theme/slider/banner_4309_white.jpg' %}" muted>
-{#    <iframe width="1920" height="1280" style="padding-left: 280px;" src="http://www.youtube.com/embed/rP2VfF9hkkE" frameborder="0"></iframe>#}
+				<div class="row nogutter fullwidth">
+					<div class="column large-12">
+						<div class="slider wrapper owl component mainslider js-main-slider" data-config='{"items": 1, "smartSpeed": 1000}'>
+							<div class="slide">
+								<div class="wrapper fullwidth fullheight pa">
+									<div class="wrapper acc pa zim slide-title-block">
+										<h3 class="text ff2 fz10 fw1 lss cw ac slidertext">Luxury is in the experience</h3>
+										<p class="text ff2 fw3 cw ac lss slidertext">Continually actualize enterprise convergence rather than strategic best practices.</p>
+										<div class="wrapper ac mt40">
+											<span class="button wrapper pt5 pb5"><a class="link fz3 lh22 ttu fw3 lss" href="#">Download Broschure</a></span>
+										</div>
+									</div>
+								</div>
+								<!-- <img src="http://placehold.it/1920x1280" alt="Odyssey slider image" class="image"> -->
+								<img src="{% static 'img/theme/slider/banner_4309_white.jpg' %}" class ="image" alt="Second slide"/>
+							</div>
+							<div class="slide">
+								<div class="wrapper fullwidth fullheight pa">
+									<div class="wrapper acc pa zim slide-title-block">
+										<h3 class="text ff2 fz10 fw1 lss cw ac slidertext">Start planning your Christmas holidays</h3>
+										<p class="text ff2 fw3 cw ac lss slidertext">Continually actualize enterprise convergence rather than strategic best practices.</p>
+										<div class="wrapper ac mt40">
+											<span class="button wrapper pt5 pb5"><a class="link fz3 lh22 ttu fw3 lss" href="#">Download Broschure</a></span>
+										</div>
+									</div>
+								</div>
+								<img src="http://placehold.it/1920x1280" alt="Odyssey slider image" class="image">
+                                <img src="{% static 'media/slider/banner_4309_white.jpg' %}" class ="image"/>
 
-					        <source src="{% static 'video/video-4309-4310.mp4' %}" type="video/mp4">
+                                {% for object in object_list %}
+                                {{ object.img }}
+                            <img src="{{ object.img }}">
 
-					        <source src="{% static 'video/video-4300-4301.mp4' %}" type="video/webm">
-
-					        <source src="video/travel.ogv" type="video/ogg">
-
-					    </video>
-
-				    <span class="volume-toggle pe-7s-volume2"></span>
+                                {% endfor %}
+							</div>
+							<div class="slide">
+								<div class="wrapper fullwidth fullheight pa">
+									<div class="wrapper acc pa zim slide-title-block">
+										<h3 class="text ff2 fz10 fw1 lss cw ac slidertext">Bali is closer than you think</h3>
+										<p class="text ff2 fw3 cw ac lss slidertext">Continually actualize enterprise convergence rather than strategic best practices.</p>
+										<div class="wrapper ac mt40">
+											<span class="button wrapper pt5 pb5"><a class="link fz3 lh22 ttu fw3 lss" href="#">Download Broschure</a></span>
+										</div>
+									</div>
+								</div>
+								<img src="http://placehold.it/1920x1280" alt="Odyssey slider image" class="image">
+							</div>
+						</div>
+					</div>
 				</div>
 			</div>
 		</section>
-</section>
-
-
-{#	<section role="main" class="sections-container">#}
-{#		<section class="section-fix js-first-screen first-screen-section">#}
-{#			<div class="wrapper fullheight">#}
-{#				<div class="row nogutter fullwidth">#}
-{#					<div class="column large-12">#}
-{#						<div class="slider wrapper owl component mainslider js-main-slider" data-config='{"items": 1, "smartSpeed": 1000}'>#}
-{#							<div class="slide">#}
-{#								<div class="wrapper fullwidth fullheight pa">#}
-{#									<div class="wrapper acc pa zim slide-title-block">#}
-{#										<h3 class="text ff2 fz10 fw1 lss cw ac slidertext">Luxury is in the experience</h3>#}
-{#										<p class="text ff2 fw3 cw ac lss slidertext">Continually actualize enterprise convergence rather than strategic best practices.</p>#}
-{#										<div class="wrapper ac mt40">#}
-{#											<span class="button wrapper pt5 pb5"><a class="link fz3 lh22 ttu fw3 lss" href="#">Download Broschure</a></span>#}
-{#										</div>#}
-{#									</div>#}
-{#								</div>#}
-{#								<!-- <img src="http://placehold.it/1920x1280" alt="Odyssey slider image" class="image"> -->#}
-{#								<img src="{% static 'img/theme/slider/banner_4309_white.jpg' %}" class ="image" alt="Second slide"/>#}
-{#							</div>#}
-{#							<div class="slide">#}
-{#								<div class="wrapper fullwidth fullheight pa">#}
-{#									<div class="wrapper acc pa zim slide-title-block">#}
-{#										<h3 class="text ff2 fz10 fw1 lss cw ac slidertext">Start planning your Christmas holidays</h3>#}
-{#										<p class="text ff2 fw3 cw ac lss slidertext">Continually actualize enterprise convergence rather than strategic best practices.</p>#}
-{#										<div class="wrapper ac mt40">#}
-{#											<span class="button wrapper pt5 pb5"><a class="link fz3 lh22 ttu fw3 lss" href="#">Download Broschure</a></span>#}
-{#										</div>#}
-{#									</div>#}
-{#								</div>#}
-{#								<img src="http://placehold.it/1920x1280" alt="Odyssey slider image" class="image">#}
-{#                                <img src="{% static 'media/slider/banner_4309_white.jpg' %}" class ="image"/>#}
-{##}
-{#                                {% for object in object_list %}#}
-{#                                {{ object.img }}#}
-{#                            <img src="{{ object.img }}">#}
-{##}
-{#                                {% endfor %}#}
-{##}
-{##}
-{#							</div>#}
-{#							<div class="slide">#}
-{#								<div class="wrapper fullwidth fullheight pa">#}
-{#									<div class="wrapper acc pa zim slide-title-block">#}
-{#										<h3 class="text ff2 fz10 fw1 lss cw ac slidertext">Bali is closer than you think</h3>#}
-{#										<p class="text ff2 fw3 cw ac lss slidertext">Continually actualize enterprise convergence rather than strategic best practices.</p>#}
-{#										<div class="wrapper ac mt40">#}
-{#											<span class="button wrapper pt5 pb5"><a class="link fz3 lh22 ttu fw3 lss" href="#">Download Broschure</a></span>#}
-{#										</div>#}
-{#									</div>#}
-{#								</div>#}
-{#								<img src="http://placehold.it/1920x1280" alt="Odyssey slider image" class="image">#}
-{#							</div>#}
-{#						</div>#}
-{#					</div>#}
-{#				</div>#}
-{#			</div>#}
-{#		</section>#}

@@ -1,0 +1,40 @@
+body[data-colorTheme="dark"] .booknow-section {
+	.button {
+		color: #767676;	
+		border: 1px solid currentcolor;
+		.text {
+			color: currentcolor;
+		}
+
+		&:hover {
+			color: @mainColor;
+			border-color: currentcolor;
+
+			.text {
+				color: currentcolor;
+			}
+		}
+	}
+}
+
+@media screen and (max-width: 640px) {
+	.booknow-section {
+		padding: 40px 0 !important;
+
+		.title {
+			font-size: 18px !important;
+		}
+
+		.pe-7s-paper-plane {
+			display: block;
+		}
+	}
+}
+
+@media screen and (max-width: 400px) {
+	.booknow-section {
+		.title {
+			font-size: 15px !important;
+		}
+	}
+}

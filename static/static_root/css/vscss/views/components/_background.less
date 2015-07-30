@@ -1,0 +1,58 @@
+.bg1{ background-image: url(http://placehold.it/1366x453); }
+.bg2{ background-image: url(http://placehold.it/1920x1277); }
+.bg3{ background-image: url(http://placehold.it/1058x643); }
+.bg4{ background-image: url(http://placehold.it/1920x1277); }
+
+.tbgc1 { background-color: #fff; }
+.tbgc2 { background-color: #fff; }
+.tbgc3 { background-color: #f4f4f4; }
+.tbgc4 { background-color: #363636; }
+.tbgc5 { background-color: #f4f4f4; }
+
+body[data-colorTheme="dark"] {
+	.tbgc1 { background-color: #1f1f1f; }
+	.tbgc2 { background-color: #2e2e2e; }
+	.tbgc3 { background-color: #1b1b1b; }
+	.tbgc4 { background-color: #1b1b1b; }	
+	.tbgc5 { background-color: #2e2e2e; }	
+	background-color: #1b1b1b;
+}
+
+.parallax-fix {
+	overflow: hidden;
+	position: relative;
+	z-index: 1;
+
+	& > .wrapper { position: relative; }
+	
+	.parallax {
+		left: 0px;
+		top: 0;
+		width: 100%;
+		height: 100%;
+		position: fixed;
+		pointer-events: none;
+		background-size: 100%;
+		background-size: cover;
+		background-repeat: no-repeat;
+		background-position: center center;
+		-webkit-transform: translateZ(0);
+		   -moz-transform: translateZ(0);
+		     -o-transform: translateZ(0);
+		        transform: translateZ(0);
+	}
+}
+
+.no-parallax {
+	.parallax {
+		position: absolute !important;
+		background-attachment: fixed;
+	}
+}
+
+.low-device {
+	.parallax {
+		position: absolute !important;
+		background-attachment: scroll !important;
+	}
+}

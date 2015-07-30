@@ -1,0 +1,73 @@
+.testimonials{
+	border-top: 1px solid @color4;
+	border-bottom: 1px solid @color4;
+
+	.owl-stage-outer {
+		margin-top: -50px;
+	}
+
+	.photo img{
+		max-width: 100px;
+	}
+
+	.owl-dots {
+		z-index: 2;
+		padding: 0 33px;
+		background-color: #fff;
+		position: absolute;
+		bottom: -4px;
+		left: 50%;
+		-webkit-transform: translateX(-50%) translateY(50%);
+		   -moz-transform: translateX(-50%) translateY(50%);
+		    -ms-transform: translateX(-50%) translateY(50%);
+		     -o-transform: translateX(-50%) translateY(50%);
+		        transform: translateX(-50%) translateY(50%);
+	}
+
+	.owl-dot {
+		display: inline-block;
+		vertical-align: top;
+		zoom: 1; /* Fix for IE7 */
+		*display: inline; /* Fix for IE7 */
+		border-radius: 50%;
+		margin: 0 10px;
+		width: 11px;
+		height: 11px;
+		border: 1px solid #cdcdcd;
+		-webkit-transition: border-color .25s ease;
+		   -moz-transition: border-color .25s ease;
+		    -ms-transition: border-color .25s ease;
+		     -o-transition: border-color .25s ease;
+		        transition: border-color .25s ease;
+
+		&:hover, &.active {
+			border-color: @mainColor;
+		}
+	}
+}
+
+body[data-colorTheme="dark"] {
+	.testimonials {
+		border-color: #363636;
+
+		.photo .wrapper {
+			background-color: #1f1f1f;
+		}
+
+		.post {
+			color: #a1a1a1;
+		}
+
+		.owl-dots {
+			background-color: #1f1f1f;
+		}
+
+		.owl-dot {
+			border-color: #353535;
+
+			&:hover, &.active {
+				border-color: @mainColor;
+			}
+		}
+	}
+}

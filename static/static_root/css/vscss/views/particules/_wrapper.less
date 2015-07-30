@@ -1,0 +1,134 @@
+.wrapper {
+
+	display: block;
+
+	// Makes the wrpper full width
+	&.fullwidth{
+		width: 100%;
+	}
+
+	// Makes the wrapper full height with a relative position
+	&.fullheight{
+		position: relative;
+		height: 100%;
+	}
+
+	
+	// Background size
+	&.bgsc { background-size: cover; }
+
+	// Background position
+	&.bgpt { background-position: center top; }
+	&.bgpb { background-position: center bottom; }
+	&.bgpl { background-position: left center; }
+	&.bgpr { background-position: right center; }
+	&.bgptl { background-position: left top; } 
+	&.bgptr { background-position: right top; }
+	&.bgpbl { background-position: left bottom; }
+	&.bgpbr { background-position: right bottom; }
+
+	// Background color
+	&.bgcw { background-color: white;	}
+	&.bgc1 { background-color: @color1;	}
+	&.bgc2 { background-color: @mainTextColor; }
+
+
+	&.zixxs { z-index: -30 	}
+	&.zixs 	{ z-index: -20 	}
+	&.zis 	{ z-index: -10 	}
+	&.zim 	{ z-index: 1 	}
+	&.zil 	{ z-index: 10 	}
+	&.zixl 	{ z-index: 20 	}
+	&.zixxl { z-index: 30 	}
+
+	
+	.posst { position: static; }
+	.posr { position: relative; }
+	
+
+	&.pr{
+		position: relative;
+	}
+
+	&.pa {
+
+		&.fullwidth{
+			left: 0;
+			right: 0;
+		}
+		
+		&.fullheight{
+			top: 0;
+			bottom: 0;
+		}
+
+		&.ac {
+			left: 50%;
+			top: 0;
+			-webkit-transform: translateX(-50%);
+			   -moz-transform: translateX(-50%);
+			    -ms-transform: translateX(-50%);
+			     -o-transform: translateX(-50%);
+			        transform: translateX(-50%);
+		}
+
+		&.acc {
+			left: 50%;
+			top: 50%;
+			-webkit-transform: translateX(-50%) translateY(-50%);
+			   -moz-transform: translateX(-50%) translateY(-50%);
+			    -ms-transform: translateX(-50%) translateY(-50%);
+			     -o-transform: translateX(-50%) translateY(-50%);
+			        transform: translateX(-50%) translateY(-50%);
+		}
+
+		&.arc {
+			right: 0;
+			top: 50%;
+			-webkit-transform: translateY(-50%);
+			   -moz-transform: translateY(-50%);
+			    -ms-transform: translateY(-50%);
+			     -o-transform: translateY(-50%);
+			        transform: translateY(-50%);
+		}
+
+		&.alc {
+			left: 0;
+			top: 50%;
+			-webkit-transform: translateY(-50%);
+			   -moz-transform: translateY(-50%);
+			    -ms-transform: translateY(-50%);
+			     -o-transform: translateY(-50%);
+			        transform: translateY(-50%);
+		}
+
+
+		&.top 	{ top: 0;	}
+		&.right { right: 0;	}
+		&.bottom{ bottom: 0;}
+		&.left 	{ left: 0;	}
+
+		position: absolute;
+	}
+	
+	&.pf {
+		.pa;
+
+		position: fixed !important;
+	}
+
+	&.inline {
+		display: inline-block;
+		vertical-align: top;
+		zoom: 1; /* Fix for IE7 */
+		*display: inline; /* Fix for IE7 */
+	}
+
+	&.ovh {
+		overflow: hidden;
+	}
+
+	&.vam {
+		vertical-align: middle;
+	}
+}

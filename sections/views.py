@@ -11,4 +11,3 @@ from sections.models import (
 class AboutList(ListView):
     model = About
     template_name = 'home.html'
-

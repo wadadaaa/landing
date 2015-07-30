@@ -1,0 +1,120 @@
+.share-btn {
+	font-size: 0;
+	position: relative;
+	overflow: hidden;
+
+	.wrapper {
+		vertical-align: middle;
+	}
+
+	.btn-icon {
+		margin-right: 1px;
+	}
+
+	&.facebook {
+		.wrapper {
+			background-color: #3670b9;
+		}
+	}
+
+	&.twitter {
+		.wrapper {
+			background-color: #55c1e7;
+		}
+	}
+
+	a {
+		position: relative;
+		z-index: 1;
+		display: block;
+	}
+
+	a:after {
+		display: block;
+		content: '';
+		background-color: rgba(255, 255, 255, 0.2);
+		position: absolute;
+		width: 100%;
+		height: 100%;
+		left: 0;
+		top: 0;
+		-webkit-transition: -webkit-transform .25s ease;
+		   -moz-transition: -moz-transform .25s ease;
+		    -ms-transition: -ms-transform .25s ease;
+		     -o-transition: -o-transform .25s ease;
+		        transition: transform .25s ease;
+		-webkit-transform: translateY(-100%) translateZ(0);
+		   -moz-transform: translateY(-100%) translateZ(0);
+		    -ms-transform: translateY(-100%);
+		     -o-transform: translateY(-100%) translateZ(0);
+		        transform: translateY(-100%) translateZ(0);
+	}
+
+	a:hover:after {
+		-webkit-transform: translateY(0%) translateZ(0);
+		   -moz-transform: translateY(0%) translateZ(0);
+		    -ms-transform: translateY(0%);
+		     -o-transform: translateY(0%) translateZ(0);
+		        transform: translateY(0%) translateZ(0);
+	}
+}
+
+.withus-section {
+	position: relative;
+
+	.custom-row {
+		font-size: 0;
+
+		& > .column {
+			float: none;
+			margin-left: -4px;
+			display: inline-block;
+			vertical-align: middle;
+			letter-spacing: normal;
+		}
+	}
+
+	.payment-method {
+
+		.method-item {
+			border: 1px solid #e1e1e1;
+			width: 108px;
+			height: 40px;	
+			line-height: 40px;
+			margin: 0 10px;	
+
+			img {
+				display: inline-block;
+				vertical-align: middle;
+			}
+		}
+	}
+
+	@media screen and (min-width: 1024px) {
+		&:after {
+			position: absolute;
+			z-index: 3;
+			display: block;
+			content: '';
+			width: 1px;
+			height: 150px;
+			background-color: #e1e1e1;
+			left: 50%;
+			top: 50%;
+			-webkit-transform: translateY(-50%);
+			   -moz-transform: translateY(-50%);
+			    -ms-transform: translateY(-50%);
+			     -o-transform: translateY(-50%);
+			        transform: translateY(-50%);
+		}		
+	}
+}
+
+body[data-colorTheme="dark"] {
+	.withus-section:after {
+		background-color: #363636;
+	}
+	.withus-section .payment-method .method-item {
+		border-color: #363636;
+	}
+}

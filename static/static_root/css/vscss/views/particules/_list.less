@@ -1,0 +1,43 @@
+.list {
+	
+	margin: 0;
+	padding: 0;
+	list-style: none;
+
+	&.inline {
+
+		font-size: 0;
+
+		& > li {
+			
+			&:first-child{
+				margin-left: 0 !important;
+			}
+
+			&:last-child{
+				margin-right: 0 !important;
+			}
+
+			font-size: 14px;
+			display: inline-block;
+			vertical-align: top;
+			zoom: 1; /* Fix for IE7 */
+			*display: inline; /* Fix for IE7 */
+		}
+
+		&.xxsgutter > li { margin-left: @xxsgutter; 	margin-right: @xxsgutter; 	}
+		&.xsgutter	> li { margin-left: @xsgutter; 	margin-right: @xsgutter; 	}
+		&.sgutter	> li { margin-left: @sgutter; 	margin-right: @sgutter; 	}
+		&.mgutter	> li { margin-left: @mgutter; 	margin-right: @mgutter; 	}
+		&.lgutter	> li { margin-left: @lgutter; 	margin-right: @lgutter;	 	}
+		&.xlgutter	> li { margin-left: @xlgutter; 	margin-right: @xlgutter; 	}
+		&.xxlgutter	> li { margin-left: @xxlgutter; 	margin-right: @xxlgutter;	}
+
+		&.al { text-align: left; }
+		&.ac { text-align: center; }
+		&.ar { text-align: right; }
+
+	}
+
+	
+}

@@ -1,0 +1,151 @@
+.menu {
+	display: block;
+	margin-top: 5px;
+
+	a {
+		position: relative;
+		-webkit-transition: color .25s ease;
+		   -moz-transition: color .25s ease;
+		    -ms-transition: color .25s ease;
+		     -o-transition: color .25s ease;
+		        transition: color .25s ease;
+
+		&:after{
+			opacity: 0;
+			content: '';
+			display: block;
+			position: absolute;
+			bottom: -@xsgutter;
+			left: 0;
+			right: 0;
+			width: 100%;
+			height: 1px;
+			background-color: @mainColor;
+			-webkit-transform: translateY(-3px);
+			   -moz-transform: translateY(-3px);
+			    -ms-transform: translateY(-3px);
+			     -o-transform: translateY(-3px);
+			        transform: translateY(-3px);
+
+			-webkit-transition: -webkit-transform .25s ease, opacity .25s ease;
+			   -moz-transition: -moz-transform .25s ease, opacity .25s ease;
+			    -ms-transition: -ms-transform .25s ease, opacity .25s ease;
+			     -o-transition: -o-transform .25s ease, opacity .25s ease;
+			        transition: transform .25s ease, opacity .25s ease;
+		}
+
+		&:hover{
+
+			&:after{
+				opacity: 1;
+				-webkit-transform: translateY(0);
+				   -moz-transform: translateY(0);
+				    -ms-transform: translateY(0);
+				     -o-transform: translateY(0);
+				        transform: translateY(0);
+			}
+
+		}
+	
+	}
+
+	&.mobile-menu {
+		display: none;
+		position: fixed;
+		top: 0;
+		left: 0;
+		width: 100%;
+		z-index: 10;
+		background-color: #fff;
+		padding: 20px 0;
+		box-shadow: 0 1px 5px rgba(0, 0, 0, .3);
+
+		ul {
+			display: block !important;
+		}
+
+		li {
+			display: block !important;
+			margin: 20px 0 !important;
+
+			a {
+				padding: 5px 0;
+				font-size: 13px !important;
+
+				&:after {
+					bottom: 0;
+				}
+			}
+		}
+	}
+
+	.menutoggle {
+		display: none;
+		width: 24px;
+		z-index: 5;
+		padding: 6px 0;
+		cursor: pointer;
+		position: relative;
+		margin: 0 auto;
+		margin-top: 9px;
+
+		.line {
+			color: @mainTextColor;
+			background-color: currentcolor;
+			height: 1px;
+			display: block;
+
+			&:after, &:before {
+				position: absolute;
+				left: 0;
+				width: 100%;
+				height: 1px;
+				background-color: currentcolor;
+				content: '';
+				display: block;
+			}
+
+			&:after { bottom: 0; }
+			&:before { top: 0; }
+		}
+	}
+}
+
+header:not(.fixedheader) .menu {
+	@media screen and (max-width: 1024px) {
+		ul {
+			display: none !important;
+		}
+
+		.menutoggle {
+			display: block;
+		}
+	}
+}
+
+body[data-colorTheme="dark"] .menu {
+
+	a {
+		color: #a0a0a0;
+
+		&.active:after {
+			background-color: #a1a1a1;
+		}
+
+		&:hover {
+			color: @mainColor; 
+
+			&.activew:after {
+				background-color: @mainColor;
+			}
+		}
+	}
+
+	.menutoggle .line {
+		color: #fff;
+	}
+
+	.mobile-menu { 
+		background-color: #1f1f1f;
+	}
+}

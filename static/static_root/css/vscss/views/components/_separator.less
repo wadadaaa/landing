@@ -1,0 +1,37 @@
+.separator{
+	color: @color3;
+
+	&.around{
+		border: 1px solid currentcolor;
+	}
+		
+	&.left{
+		border-left: 1px solid currentcolor;
+	}
+
+	&.right{
+		border-right: 1px solid currentcolor;
+	}
+
+	&.bottom{
+		border-bottom: 1px solid currentcolor;
+	}
+
+	&.top{
+		border-top: 1px solid currentcolor;
+	}
+
+	&.c2{
+		color: @color6;
+	}
+
+	@media screen and (max-width: 1024px) {
+		border: 0;
+	}
+}
+
+body[data-colorTheme="dark"] {
+	.separator {
+		color: #2a2a2a;
+	}
+}
