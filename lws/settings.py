@@ -1,5 +1,8 @@
 import os
-BASE_DIR = os.path.dirname(os.path.dirname(os.path.dirname(__file__)))
+# BASE_DIR = os.path.dirname(os.path.dirname(os.path.dirname(__file__)))
+ROOT = os.path.dirname(os.path.dirname(os.path.dirname(__file__)))
+cd = lambda *a: os.path.join(ROOT, *a)
+PROJECT = os.path.basename(ROOT)
 
 
 
@@ -10,7 +13,7 @@ DEBUG = True
 
 TEMPLATE_DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
@@ -25,8 +28,6 @@ INSTALLED_APPS = (
     'joins',
     'sections',
     'product',
-    #'debug_toolbar',
-
 )
 
 MIDDLEWARE_CLASSES = (
@@ -51,7 +52,7 @@ WSGI_APPLICATION = 'lws.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+        'NAME': os.path.join(ROOT, 'db.sqlite3'),
     }
 }
 
@@ -68,22 +69,39 @@ USE_TZ = True
 
 SHARE_URL = "http://127.0.0.1:8000/?ref="
 
+
+# TEMPLATE_DIRS = (
+#     os.path.join(BASE_DIR, 'templates'),
+
+# )
+
+# STATIC_URL = '/static/'
+
+# STATIC_ROOT = os.path.join(BASE_DIR, 'static', 'static_root')
+
+# STATICFILES_DIRS = (
+#     os.path.join(BASE_DIR, 'static', 'static_dirs'),
+# )
+
+# MEDIA_ROOT = os.path.join(BASE_DIR, 'static', 'media')
+
+# MEDIA_URL = '/media/'
+
+MEDIA_ROOT = cd('public/uploads')
+MEDIA_URL = '/uploads/'
+STATIC_ROOT = cd('public/assets')
+STATIC_URL = '/assets/'
+
+
+STATICFILES_FINDERS = (
+    'django.contrib.staticfiles.finders.FileSystemFinder',
+    'django.contrib.staticfiles.finders.AppDirectoriesFinder',
+    'django.contrib.staticfiles.finders.DefaultStorageFinder',
+)
+
 TEMPLATE_DIRS = (
-    os.path.join(BASE_DIR, 'templates'),
-
+    cd('templates'),
 )
-
-STATIC_URL = '/static/'
-
-STATIC_ROOT = os.path.join(BASE_DIR, 'static', 'static_root')
-
-STATICFILES_DIRS = (
-    os.path.join(BASE_DIR, 'static', 'static_dirs'),
-)
-
-MEDIA_ROOT = os.path.join(BASE_DIR, 'static', 'media')
-
-MEDIA_URL = '/media/'
 
 if DEBUG:
     INSTALLED_APPS += (
