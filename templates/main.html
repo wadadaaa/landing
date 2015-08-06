@@ -6,17 +6,19 @@
 				<div class="row nogutter fullwidth">
 					<div class="column large-12">
 						<div class="slider wrapper owl component mainslider js-main-slider" data-config='{"items": 1, "smartSpeed": 1000}'>
+							
+							{% for slider in slider_list %}
 							<div class="slide">
 								<div class="wrapper fullwidth fullheight pa">
 									<div class="wrapper acc pa zim slide-title-block">
-										<h3 class="text ff2 fz10 fw1 lss cw ac slidertext">Мультиварки МАРТА</h3>
-										<p class="text ff2 fw3 cw ac lss slidertext">Мы готовим, а вы отдыхаете.</p>
+										<h3 class="text ff2 fz10 fw1 lss cw ac slidertext">{{slider.title }}</h3>
+										<p class="text ff2 fw3 cw ac lss slidertext">{{slider.description}}</p>
 									</div>
 								</div>
-					
-								<img src="{% static 'img/theme/slider/shutterstock_111610325.jpg' %}" class ="image" alt="Second slide"/>
+								<img src="{{ MEDIA_URL }}{{ slider.img }}">
 							</div>
-							<div class="slide">
+							{% endfor %}
+{# 							<div class="slide">
 								<div class="wrapper fullwidth fullheight pa">
 									<div class="wrapper acc pa zim slide-title-block">
 										<h3 class="text ff2 fz10 fw1 lss cw ac slidertext">Мультиварки МАРТА</h3>
@@ -33,7 +35,7 @@
 									</div>
 								</div>
 								<img src="{% static 'img/theme/slider/shutterstock_135075155.jpg' %}" class ="image"/>
-							</div>
+							</div> #}
 						</div>
 					</div>
 				</div>
