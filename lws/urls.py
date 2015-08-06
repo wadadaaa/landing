@@ -2,16 +2,16 @@ from django.conf import settings
 from django.conf.urls import patterns, include, url
 from django.conf.urls.static import static
 from django.contrib import admin
-from sections.views import AboutList
+from sections.views import SectionsView
 admin.autodiscover()
 
 urlpatterns = [
     url(r'^admin/', include(admin.site.urls)),
-    url(r'^$', 'joins.views.home', name='home'),
-    # url(r'^$', AboutList.as_view(), name='about-list'),
+    # url(r'^$', 'joins.views.home', name='home'),
+    url(r'^$', SectionsView.as_view(), name='about-list'),
 
-    url(r'^$', include('sections.urls')),
-    url(r'^$', include('product.urls')),
+    # url(r'^$', include('sections.urls')),
+    # url(r'^$', include('product.urls')),
     #url(r'^testhome$', 'lws.views.testhome', name='testhome'),
     url(r'^(?P<ref_id>.*)$',
         'joins.views.share', name='share'),
