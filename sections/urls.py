@@ -3,8 +3,9 @@ from .views import *
 
 
 from django.conf.urls import url
-from sections.views import About
+from sections.views import AboutList
 
 urlpatterns = [
-    url(r'^aboutus/', AboutList.as_view()),
+    url(r'^$', AboutList.as_view(), name='about-list'),
+    
 ]
