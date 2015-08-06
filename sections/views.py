@@ -14,7 +14,7 @@ class SectionsView(TemplateView):
 
     def get_context_data(self, **kwargs):
     	context = super(SectionsView, self).get_context_data(**kwargs)
-        context['about_list'] = About.objects.all()
-        context['slider_list'] = Slider.objects.all()
+        context['abouts'] = About.objects.all()
+        context['slides'] = Slider.objects.all()
         return context
 
